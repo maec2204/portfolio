@@ -62,11 +62,17 @@ export type FilterTag = "All" | ProjectTag
 // Labs (mini demos)
 // ---------------------------------------------------------------------------
 
+export type LabType = "RAG" | "MCP" | "Evals"
+
+export type LabIcon = "MessageSquare" | "Wrench" | "Brain"
+
 export interface Lab {
   /** Demo title. */
   name: string
   /** Which capability area this demo covers. */
-  type: string
+  type: LabType
+  /** Lucide icon key consumed by the Labs component. */
+  icon: LabIcon
   /** Short description shown before the demo is opened. */
   description: string
 
@@ -129,6 +135,23 @@ export interface Post {
 export interface Highlight {
   label: string
   description: string
+  icon: HighlightIcon
+}
+
+export type HighlightIcon = "Code2" | "Landmark" | "Layers" | "TrendingUp"
+
+// ---------------------------------------------------------------------------
+// About / Contact
+// ---------------------------------------------------------------------------
+
+export type StrengthItem = string
+
+export type SocialIcon = "Github" | "Linkedin" | "Twitter" | "Mail"
+
+export interface SocialLink {
+  label: string
+  href: string
+  icon: SocialIcon
 }
 
 // ---------------------------------------------------------------------------

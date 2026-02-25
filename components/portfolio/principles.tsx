@@ -1,4 +1,6 @@
 import { PRINCIPLES } from "@/lib/portfolio-data"
+import type { PrincipleIcon } from "@/lib/portfolio-types"
+import type { LucideIcon } from "lucide-react"
 import {
   BookOpen,
   Shield,
@@ -12,7 +14,7 @@ import {
   TrendingUp,
 } from "lucide-react"
 
-const ICON_MAP = {
+const ICON_MAP: Record<PrincipleIcon, LucideIcon> = {
   BookOpen,
   Shield,
   FlaskConical,
@@ -23,7 +25,7 @@ const ICON_MAP = {
   MessageSquare,
   TestTubeDiagonal,
   TrendingUp,
-} as const
+}
 
 export function Principles() {
   return (

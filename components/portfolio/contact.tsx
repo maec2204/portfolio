@@ -3,14 +3,17 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
+import { SOCIAL_LINKS } from "@/lib/portfolio-data"
+import type { SocialIcon } from "@/lib/portfolio-types"
+import type { LucideIcon } from "lucide-react"
 import { Github, Linkedin, Twitter, Mail } from "lucide-react"
 
-const SOCIALS = [
-  { label: "GitHub", href: "#", icon: Github },
-  { label: "LinkedIn", href: "#", icon: Linkedin },
-  { label: "X / Twitter", href: "#", icon: Twitter },
-  { label: "Email", href: "mailto:hello@example.com", icon: Mail },
-]
+const SOCIAL_ICON_MAP: Record<SocialIcon, LucideIcon> = {
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+}
 
 export function Contact() {
   return (
@@ -36,25 +39,28 @@ export function Contact() {
                 Find me on
               </h3>
               <div className="flex flex-wrap gap-3">
-                {SOCIALS.map((s) => (
+                {SOCIAL_LINKS.map((social) => {
+                  const Icon = SOCIAL_ICON_MAP[social.icon]
+                  return (
                   <Button
-                    key={s.label}
+                    key={social.label}
                     variant="outline"
                     size="sm"
                     className="gap-2"
                     asChild
                   >
                     <a
-                      href={s.href}
+                      href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={s.label}
+                      aria-label={social.label}
                     >
-                      <s.icon className="size-4" />
-                      {s.label}
+                      <Icon className="size-4" />
+                      {social.label}
                     </a>
                   </Button>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </div>

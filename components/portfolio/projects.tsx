@@ -17,10 +17,11 @@ import {
   TooltipContent,
 } from "@/components/ui/tooltip"
 import { PROJECTS, FILTER_TAGS } from "@/lib/portfolio-data"
+import type { FilterTag } from "@/lib/portfolio-types"
 import { ArrowRight, ExternalLink, Star, TrendingUp } from "lucide-react"
 
 export function Projects() {
-  const [activeFilter, setActiveFilter] = useState("All")
+  const [activeFilter, setActiveFilter] = useState<FilterTag>("All")
 
   const featured = PROJECTS.find((p) => p.featured)
   const regular = PROJECTS.filter((p) => !p.featured)

@@ -20,9 +20,15 @@ import {
 } from "@/components/ui/dialog"
 import { Separator } from "@/components/ui/separator"
 import { LABS } from "@/lib/portfolio-data"
+import type { LabIcon } from "@/lib/portfolio-types"
+import type { LucideIcon } from "lucide-react"
 import { FlaskConical, Play, MessageSquare, Wrench, Brain } from "lucide-react"
 
-const LAB_ICONS = [MessageSquare, Wrench, Brain]
+const LAB_ICONS: Record<LabIcon, LucideIcon> = {
+  MessageSquare,
+  Wrench,
+  Brain,
+}
 
 export function Labs() {
   return (
@@ -44,8 +50,8 @@ export function Labs() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {LABS.map((lab, i) => {
-            const Icon = LAB_ICONS[i]
+          {LABS.map((lab) => {
+            const Icon = LAB_ICONS[lab.icon]
             return (
               <Card
                 key={lab.name}

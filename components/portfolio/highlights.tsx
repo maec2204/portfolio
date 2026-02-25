@@ -1,14 +1,21 @@
 import { HIGHLIGHTS } from "@/lib/portfolio-data"
+import type { HighlightIcon } from "@/lib/portfolio-types"
+import type { LucideIcon } from "lucide-react"
 import { Code2, Landmark, Layers, TrendingUp } from "lucide-react"
 
-const ICONS = [Code2, Landmark, Layers, TrendingUp]
+const HIGHLIGHT_ICON_MAP: Record<HighlightIcon, LucideIcon> = {
+  Code2,
+  Landmark,
+  Layers,
+  TrendingUp,
+}
 
 export function Highlights() {
   return (
     <section className="border-y border-border/40 bg-secondary/20">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-4">
-        {HIGHLIGHTS.map((item, i) => {
-          const Icon = ICONS[i]
+        {HIGHLIGHTS.map((item) => {
+          const Icon = HIGHLIGHT_ICON_MAP[item.icon]
           return (
             <div
               key={item.label}
