@@ -17,7 +17,7 @@ import {
   TooltipContent,
 } from "@/components/ui/tooltip"
 import { PROJECTS, FILTER_TAGS } from "@/lib/portfolio-data"
-import { ArrowRight, ExternalLink, Star } from "lucide-react"
+import { ArrowRight, ExternalLink, Star, TrendingUp } from "lucide-react"
 
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState("All")
@@ -39,7 +39,7 @@ export function Projects() {
             Projects
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Systems I have built to sharpen my AI engineering practice.
+            Production systems I have designed and shipped across fintech, payments, and insurance.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export function Projects() {
               </div>
               <div className="shrink-0">
                 <Button size="lg" className="gap-2">
-                  Read Case Study
+                  Read More
                   <ArrowRight className="size-4" />
                 </Button>
               </div>
@@ -123,7 +123,7 @@ export function Projects() {
               </CardContent>
               <CardFooter className="gap-2">
                 <Button variant="outline" size="sm" className="gap-1.5">
-                  Case Study
+                  Details
                   <ArrowRight className="size-3" />
                 </Button>
                 {project.hasDemo ? (
@@ -150,6 +150,21 @@ export function Projects() {
               </CardFooter>
             </Card>
           ))}
+        </div>
+
+        {/* AI evolution callout */}
+        <div className="mt-10 flex items-start gap-4 rounded-2xl border border-primary/20 bg-primary/5 p-6">
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <TrendingUp className="size-5" />
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-foreground">
+              Now evolving toward AI systems
+            </h3>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              The same production engineering principles behind these projects — clear architecture, rigorous testing, and observability — are now being applied to AI agents, RAG pipelines, and evaluation frameworks.
+            </p>
+          </div>
         </div>
       </div>
     </section>

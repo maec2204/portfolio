@@ -6,6 +6,10 @@ import {
   Activity,
   UserCheck,
   Rocket,
+  Layers,
+  MessageSquare,
+  TestTubeDiagonal,
+  TrendingUp,
 } from "lucide-react"
 
 const ICON_MAP = {
@@ -15,6 +19,10 @@ const ICON_MAP = {
   Activity,
   UserCheck,
   Rocket,
+  Layers,
+  MessageSquare,
+  TestTubeDiagonal,
+  TrendingUp,
 } as const
 
 export function Principles() {
@@ -23,10 +31,10 @@ export function Principles() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
-            How I build AI systems
+            How I build systems
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Principles that keep agent systems reliable in production.
+            Principles shaped by years of shipping production software.
           </p>
         </div>
 

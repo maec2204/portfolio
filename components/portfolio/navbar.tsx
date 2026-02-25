@@ -30,7 +30,7 @@ export function Navbar() {
         >
           <Terminal className="size-5" />
           <span className="text-base font-semibold tracking-tight">
-            agent.eng
+            moises.dev
           </span>
         </a>
 

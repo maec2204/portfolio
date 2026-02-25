@@ -26,8 +26,9 @@ export function Contact() {
               Get in touch
             </h2>
             <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">
-              Interested in working together, have a question about a project,
-              or just want to say hello? Drop me a message.
+              Based in Caracas, Venezuela. Open to remote opportunities across
+              LATAM, the US, and Europe. Interested in working together or have
+              a question? Drop me a message.
             </p>
 
             <div className="mt-10">

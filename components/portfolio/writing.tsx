@@ -26,10 +26,10 @@ export function Writing() {
             <PenLine className="size-6 text-primary" />
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-foreground">
-                Notes
+                Engineering Notes
               </h2>
               <p className="mt-1 text-muted-foreground">
-                Thinking out loud about AI engineering.
+                AI, architecture, and production systems.
               </p>
             </div>
           </div>

@@ -16,58 +16,54 @@ import type {
 
 export const PROJECTS: Project[] = [
   {
-    name: "Agentic Support Desk (MCP + RAG)",
-    slug: "agentic-support-desk",
+    name: "Crowdfunding Platform",
+    slug: "crowdfunding-platform",
     description:
-      "End-to-end AI support system with tool-calling agents, human-in-the-loop approvals, audit logging, and citation-grounded answers from internal docs.",
-    tags: ["Agents", "MCP", "RAG", "Evals"],
+      "Full-featured investment crowdfunding platform with campaign management, investor dashboards, KYC flows, and real-time funding progress. Served thousands of active users in production.",
+    tags: ["React", "Fullstack", "Fintech"],
     featured: true,
     hasDemo: false,
+    date: "2024-06-01",
   },
   {
-    name: "RAG Docs Copilot",
-    slug: "rag-docs-copilot",
+    name: "Parking Automation System",
+    slug: "parking-automation",
     description:
-      "Semantic search over technical documentation with citation extraction and a curated eval set for retrieval quality.",
-    tags: ["RAG", "Evals"],
-    featured: false,
-    hasDemo: true,
-  },
-  {
-    name: "MCP Tool Server",
-    slug: "mcp-tool-server",
-    description:
-      "Reusable MCP server exposing composable tools for downstream apps with schema validation and auth middleware.",
-    tags: ["MCP", "Cloud"],
+      "IoT-integrated parking management system handling gate control, license plate recognition, payment processing, and occupancy tracking across multiple locations.",
+    tags: ["Fullstack", "Fintech"],
     featured: false,
     hasDemo: false,
+    date: "2023-11-01",
   },
   {
-    name: "Evals Harness for Agents",
-    slug: "evals-harness",
+    name: "Insurance Quoting Engine",
+    slug: "insurance-quoting-engine",
     description:
-      "Regression tests and property-based testing framework with a metrics dashboard for tracking agent quality over time.",
-    tags: ["Evals", "Agents"],
-    featured: false,
-    hasDemo: true,
-  },
-  {
-    name: "Cloud Cost Guardrail Agent",
-    slug: "cloud-cost-guardrail",
-    description:
-      "Pre-deploy agent that enforces cost policies, checks resource quotas, and flags drift before infrastructure changes land.",
-    tags: ["Agents", "Cloud"],
+      "Remote engagement with a US-based insurance company. Built a dynamic quoting system with multi-step forms, risk calculations, and real-time premium estimation for end consumers.",
+    tags: ["React", "Fullstack"],
     featured: false,
     hasDemo: false,
+    date: "2023-05-01",
   },
   {
-    name: "Observability for Agents",
-    slug: "observability-agents",
+    name: "Banking & Payroll Systems",
+    slug: "banking-payroll",
     description:
-      "Tracing, cost attribution, and latency monitoring dashboard for multi-step agent workflows in production.",
-    tags: ["Agents", "Cloud"],
+      "Core banking modules for payroll disbursement, transaction reconciliation, and reporting. Built with Java and integrated with legacy banking infrastructure.",
+    tags: ["Java", "Fintech"],
     featured: false,
     hasDemo: false,
+    date: "2022-08-01",
+  },
+  {
+    name: "Payment Gateway & Crypto E-commerce",
+    slug: "payment-gateway-crypto",
+    description:
+      "Custom payment gateway supporting fiat and cryptocurrency transactions. Integrated checkout flows, webhook-based settlement, and merchant dashboards.",
+    tags: ["Fullstack", "Fintech", "React"],
+    featured: false,
+    hasDemo: false,
+    date: "2024-01-01",
   },
 ]
 
@@ -77,11 +73,10 @@ export const PROJECTS: Project[] = [
 
 export const FILTER_TAGS: readonly FilterTag[] = [
   "All",
-  "Agents",
-  "RAG",
-  "MCP",
-  "Evals",
-  "Cloud",
+  "React",
+  "Fullstack",
+  "Fintech",
+  "Java",
 ]
 
 // ---------------------------------------------------------------------------
@@ -90,11 +85,11 @@ export const FILTER_TAGS: readonly FilterTag[] = [
 
 export const LABS: Lab[] = [
   {
-    name: "Ask My Portfolio",
-    slug: "ask-my-portfolio",
+    name: "RAG Document Search",
+    slug: "rag-document-search",
     type: "RAG",
     description:
-      "Chat with my portfolio using retrieval-augmented generation. Ask about projects, stack, or experience.",
+      "A retrieval-augmented generation pipeline with citation extraction. Query a knowledge base and inspect how chunks are ranked and referenced.",
     status: "coming-soon",
   },
   {
@@ -102,15 +97,15 @@ export const LABS: Lab[] = [
     slug: "tool-calling-sandbox",
     type: "MCP",
     description:
-      "Watch an agent pick and execute tools in real time. Inspect payloads, permissions, and return values.",
+      "An agent that picks and executes tools through the Model Context Protocol. Inspect payloads, permissions, and return values in real time.",
     status: "coming-soon",
   },
   {
-    name: "Agent Planning Visualizer",
-    slug: "agent-planning-visualizer",
-    type: "Agents",
+    name: "Agent Evaluation Harness",
+    slug: "agent-eval-harness",
+    type: "Evals",
     description:
-      "Step through an agent's planning loop: goal decomposition, tool selection, execution, and reflection.",
+      "Run property-based tests and regression suites against agent outputs. Compare prompt versions and track quality metrics over time.",
     status: "coming-soon",
   },
 ]
@@ -121,40 +116,34 @@ export const LABS: Lab[] = [
 
 export const PRINCIPLES: Principle[] = [
   {
-    title: "Grounded outputs",
+    title: "Production-first mindset",
     description:
-      "Every answer cites its source. Hallucinations are caught by retrieval checks and eval suites.",
-    icon: "BookOpen",
-  },
-  {
-    title: "Tool safety & permissions",
-    description:
-      "Tools declare schemas and scopes. Agents never call undeclared actions or bypass auth.",
-    icon: "Shield",
-  },
-  {
-    title: "Evaluation before iteration",
-    description:
-      "Property-based tests and regression suites run before any prompt or retrieval change ships.",
-    icon: "FlaskConical",
-  },
-  {
-    title: "Observability & cost control",
-    description:
-      "Every LLM call is traced with latency, tokens, and cost. Budgets are enforced per-request.",
-    icon: "Activity",
-  },
-  {
-    title: "Human-in-the-loop for risky actions",
-    description:
-      "Destructive or high-impact operations require explicit approval before agents proceed.",
-    icon: "UserCheck",
-  },
-  {
-    title: "Reliable deployments",
-    description:
-      "Feature flags, canary rollouts, and automated rollback keep production stable under change.",
+      "Every feature is built for real users from day one. Performance, error handling, and edge cases are part of the first commit, not an afterthought.",
     icon: "Rocket",
+  },
+  {
+    title: "Clear architecture over shortcuts",
+    description:
+      "Well-defined boundaries between layers, explicit data flows, and readable code matter more than clever abstractions. Systems should be easy to reason about.",
+    icon: "Layers",
+  },
+  {
+    title: "Communication as a technical skill",
+    description:
+      "Documenting decisions, writing clear PRs, and explaining trade-offs to non-technical stakeholders is as important as writing the code itself.",
+    icon: "MessageSquare",
+  },
+  {
+    title: "Testing & maintainability",
+    description:
+      "Automated tests, type safety, and CI pipelines catch regressions before they reach users. Code that cannot be tested confidently cannot be shipped confidently.",
+    icon: "TestTubeDiagonal",
+  },
+  {
+    title: "Evolving toward AI-driven systems",
+    description:
+      "Applying the same rigor from production engineering to AI: grounded outputs, tool safety, evaluation suites, and cost-aware inference.",
+    icon: "TrendingUp",
   },
 ]
 
@@ -163,19 +152,20 @@ export const PRINCIPLES: Principle[] = [
 // ---------------------------------------------------------------------------
 
 export const TECH_STACK: TechStackItem[] = [
-  "Next.js",
   "React",
+  "Next.js",
   "TypeScript",
   "Node.js",
+  "GraphQL",
+  "MongoDB",
+  "Java",
+  "Firebase",
   "Tailwind",
   "shadcn/ui",
-  "Postgres",
-  "pgvector",
   "Python",
   "LangGraph",
   "AWS",
-  "Cypress",
-  "PostHog",
+  "PostgreSQL",
 ]
 
 // ---------------------------------------------------------------------------
@@ -184,25 +174,25 @@ export const TECH_STACK: TechStackItem[] = [
 
 export const POSTS: Post[] = [
   {
-    title: "Why I test agents with property-based testing",
-    slug: "pbt-for-agents",
+    title: "From fintech frontends to AI agents: why the transition makes sense",
+    slug: "fintech-to-ai-agents",
     excerpt:
-      "PBT finds edge cases that unit tests miss. Here is how I apply it to tool-calling agents.",
-    date: "2026-02-10",
+      "Production systems taught me reliability, testing, and architecture. Those same principles apply directly to building trustworthy AI agents.",
+    date: "2026-02-15",
   },
   {
-    title: "Building a citation layer for RAG",
-    slug: "citation-layer-rag",
+    title: "Evaluation-first development for LLM applications",
+    slug: "eval-first-llm-dev",
     excerpt:
-      "Grounding answers is not enough, users need to verify. A walkthrough of my citation pipeline.",
-    date: "2026-01-25",
+      "Shipping a prompt without an eval suite is like deploying without tests. A practical framework for measuring agent quality.",
+    date: "2026-01-28",
   },
   {
-    title: "MCP servers: composable tool APIs for agents",
-    slug: "mcp-composable-tool-apis",
+    title: "What the Model Context Protocol means for tool-based agents",
+    slug: "mcp-tool-agents",
     excerpt:
-      "How the Model Context Protocol makes tool integration reusable across projects.",
-    date: "2026-01-12",
+      "MCP standardizes how agents discover and call tools. Notes on schema validation, auth scoping, and composability.",
+    date: "2026-01-10",
   },
 ]
 
@@ -211,9 +201,9 @@ export const POSTS: Post[] = [
 // ---------------------------------------------------------------------------
 
 export const TERMINAL_LINES: TerminalLine[] = [
-  "RAG: grounded answers with citations",
-  "Tools: MCP-based integrations",
-  "Evals: regression + property-based testing",
+  "React / Next.js / TypeScript",
+  "Fintech, payments & banking systems",
+  "Evolving into AI agents, RAG & MCP",
 ]
 
 // ---------------------------------------------------------------------------
@@ -222,20 +212,20 @@ export const TERMINAL_LINES: TerminalLine[] = [
 
 export const HIGHLIGHTS: Highlight[] = [
   {
-    label: "Next.js + TypeScript",
-    description: "Production React apps with type-safe, server-rendered UI.",
+    label: "React + TypeScript",
+    description: "Years of production experience in type-safe frontend systems.",
   },
   {
-    label: "Agentic Systems",
-    description: "Multi-step agents with tool use, planning, and memory.",
+    label: "Fintech & Payments",
+    description: "Banking, crowdfunding, insurance, and payment platforms.",
   },
   {
-    label: "RAG + Retrieval Quality",
-    description: "Semantic search with citations and measured recall.",
+    label: "Fullstack Delivery",
+    description: "End-to-end systems with GraphQL, MongoDB, Java, and Firebase.",
   },
   {
-    label: "Evals + PBT",
-    description: "Regression suites and property-based tests for LLM outputs.",
+    label: "AI Systems (Next)",
+    description: "Building toward RAG, agents, MCP, and evaluation frameworks.",
   },
 ]
 

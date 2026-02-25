@@ -11,9 +11,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'AI Agent Engineer — Portfolio',
+  title: 'Moisés Escudero — Software Engineer',
   description:
-    'Fullstack engineer building production-ready AI agents, RAG systems, and MCP integrations.',
+    'Fullstack engineer evolving into AI Systems & Agent Architecture. React, Next.js, TypeScript, fintech, and production-grade systems.',
   icons: {
     icon: [
       {

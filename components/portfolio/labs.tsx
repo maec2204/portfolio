@@ -35,10 +35,10 @@ export function Labs() {
           <FlaskConical className="size-6 text-primary" />
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-foreground">
-              Labs
+              AI Systems Lab
             </h2>
             <p className="mt-1 text-muted-foreground">
-              Interactive mini demos — run them right here.
+              Where I am building the next stage of my engineering practice — RAG systems, tool-based agents, MCP integrations, and evaluation harnesses. In progress.
             </p>
           </div>
         </div>

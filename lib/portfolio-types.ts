@@ -15,7 +15,16 @@
 // ---------------------------------------------------------------------------
 
 /** Tag values used across projects and filters. */
-export type ProjectTag = "Agents" | "RAG" | "MCP" | "Evals" | "Cloud"
+export type ProjectTag =
+  | "Agents"
+  | "RAG"
+  | "MCP"
+  | "Evals"
+  | "Cloud"
+  | "Fintech"
+  | "Fullstack"
+  | "React"
+  | "Java"
 
 export interface Project {
   /** Display name shown in the card heading. */
@@ -81,6 +90,10 @@ export type PrincipleIcon =
   | "Activity"
   | "UserCheck"
   | "Rocket"
+  | "Layers"
+  | "MessageSquare"
+  | "TestTubeDiagonal"
+  | "TrendingUp"
 
 export interface Principle {
   title: string

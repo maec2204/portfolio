@@ -4,11 +4,11 @@ import { TECH_STACK } from "@/lib/portfolio-data"
 import { User, CheckCircle2 } from "lucide-react"
 
 const STRENGTHS = [
-  "UI/UX craft — pixel-level attention with accessible, responsive design.",
-  "System integrations — APIs, webhooks, and third-party tool orchestration.",
-  "Testing mindset — property-based tests, regression suites, and CI checks.",
-  "Product analytics — instrumenting flows with PostHog and making data-driven calls.",
-  "Building demos that explain systems — turning complex architecture into interactive stories.",
+  "Pragmatic problem solving  delivering production systems in fintech, insurance, and payments.",
+  "Strong communication  explaining architecture decisions to technical and non-technical stakeholders.",
+  "Leadership & teamwork  coordinating cross-functional delivery in distributed teams.",
+  "Testing & maintainability  CI pipelines, type safety, and automated regression checks.",
+  "Systematic learner  applying production engineering rigor to AI agents, RAG, and evaluation.",
 ]
 
 export function About() {
@@ -26,11 +26,10 @@ export function About() {
           {/* Bio column */}
           <div className="lg:col-span-3">
             <p className="text-base leading-relaxed text-muted-foreground">
-              I am a frontend-focused fullstack engineer with deep experience in
-              React, Next.js, and TypeScript. I am now channeling that craft into
-              AI agent engineering — building systems where LLMs use tools safely,
-              retrieve knowledge accurately, and get evaluated rigorously before
-              they reach production.
+              {"I'm Moisés Escudero, a Software Engineer from Caracas, Venezuela, with a degree from Universidad Católica Andrés Bello. Over the past years I've built production systems across fintech, banking, insurance, crowdfunding, parking automation, and payment platforms — primarily with React, Next.js, TypeScript, GraphQL, MongoDB, Java, and Firebase."}
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              {"I'm now channeling that production engineering background into AI systems. The same principles that keep financial platforms reliable — clear architecture, rigorous testing, observability, and explicit failure handling — apply directly to building trustworthy AI agents, RAG pipelines, and evaluation frameworks. This is not a pivot away from engineering; it's the next layer of it."}
             </p>
 
             <Separator className="my-8" />

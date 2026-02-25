@@ -1,7 +1,7 @@
 import { HIGHLIGHTS } from "@/lib/portfolio-data"
-import { Code2, Bot, Search, TestTubeDiagonal } from "lucide-react"
+import { Code2, Landmark, Layers, TrendingUp } from "lucide-react"
 
-const ICONS = [Code2, Bot, Search, TestTubeDiagonal]
+const ICONS = [Code2, Landmark, Layers, TrendingUp]
 
 export function Highlights() {
   return (
