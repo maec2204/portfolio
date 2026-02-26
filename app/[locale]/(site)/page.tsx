@@ -9,10 +9,16 @@ import { Writing } from "@/components/portfolio/writing"
 import { Contact } from "@/components/portfolio/contact"
 import { Footer } from "@/components/portfolio/footer"
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{locale: string}>
+}) {
+  const {locale} = await params
+
   return (
     <div className="flex min-h-screen flex-col">
-      <Navbar />
+      <Navbar locale={locale} />
       <main className="flex-1">
         <Hero />
         <Highlights />

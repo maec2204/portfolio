@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { NAV_LINKS } from "@/lib/portfolio-data"
+import { getResumeUrl } from "@/lib/resume"
 import { usePathname, useRouter, Link } from "@/i18n/navigation"
 import type { AppLocale } from "@/i18n/routing"
 import { useLocale, useTranslations } from "next-intl"
@@ -16,13 +17,15 @@ import {
   Terminal,
 } from "lucide-react"
 
-export function Navbar() {
+export function Navbar({ locale: localeProp }: { locale?: string }) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const t = useTranslations()
-  const locale = useLocale() as AppLocale
+  const localeFromIntl = useLocale() as AppLocale
+  const locale = (localeProp ?? localeFromIntl) as AppLocale
   const pathname = usePathname()
   const router = useRouter()
+  const resumeUrl = getResumeUrl(locale)
 
   const handleLocaleChange = (nextLocale: AppLocale) => {
     if (nextLocale === locale) return
@@ -96,7 +99,13 @@ export function Navbar() {
             <Moon className="absolute size-4 rotate-90 scale-0 transition-transform dark:rotate-0 dark:scale-100" />
           </Button>
           <Button size="sm" asChild>
-            <a href="#" className="gap-2">
+            <a
+              href={resumeUrl}
+              className="gap-2"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Download className="size-3.5" />
               {t("navbar.downloadResume")}
             </a>
@@ -165,7 +174,12 @@ export function Navbar() {
           </div>
           <div className="mt-4">
             <Button size="sm" className="w-full gap-2" asChild>
-              <a href="#">
+              <a
+                href={resumeUrl}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Download className="size-3.5" />
                 {t("navbar.downloadResume")}
               </a>
