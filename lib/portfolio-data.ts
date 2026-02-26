@@ -235,10 +235,9 @@ export const CORE_STRENGTHS: StrengthItem[] = [
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { labelKey: "data.socials.github", href: "#", icon: "Github" },
-  { labelKey: "data.socials.linkedin", href: "#", icon: "Linkedin" },
-  { labelKey: "data.socials.twitter", href: "#", icon: "Twitter" },
-  { labelKey: "data.socials.email", href: "mailto:hello@example.com", icon: "Mail" },
+  { labelKey: "data.socials.github", href: "https://github.com/maec2204", icon: "Github" },
+  { labelKey: "data.socials.linkedin", href: "https://www.linkedin.com/in/moisesescudero", icon: "Linkedin" },
+  { labelKey: "data.socials.email", href: "mailto:moises.a.escudero@gmail.com", icon: "Mail" },
 ]
 
 // ---------------------------------------------------------------------------

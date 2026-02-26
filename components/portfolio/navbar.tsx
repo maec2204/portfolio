@@ -38,7 +38,7 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
   const activeSectionFromScroll = useActiveSection({
     enabled: isHome,
     sectionIds,
-    headerOffset: 96,
+    headerOffset: 72,
   })
 
   useEffect(() => {

@@ -11,11 +11,14 @@ interface UseActiveSectionOptions {
 export function useActiveSection({
   enabled,
   sectionIds,
-  headerOffset = 96,
+  headerOffset = 72,
 }: UseActiveSectionOptions): string {
   const [activeSectionId, setActiveSectionId] = useState("")
-
   const sectionKey = useMemo(() => sectionIds.join("|"), [sectionIds])
+  const stableSectionIds = useMemo(
+    () => (sectionKey ? sectionKey.split("|") : []),
+    [sectionKey]
+  )
 
   useEffect(() => {
     if (!enabled) {
@@ -23,67 +26,46 @@ export function useActiveSection({
       return
     }
 
-    const getSectionElements = () =>
-      sectionIds
+    const getPositions = () =>
+      stableSectionIds
         .map((id) => document.getElementById(id))
-        .filter((element): element is HTMLElement => element !== null)
+        .filter((el): el is HTMLElement => el !== null)
+        .map((el) => ({ id: el.id, top: el.getBoundingClientRect().top }))
+        .sort((a, b) => a.top - b.top)
 
-    const computeActiveSection = () => {
-      const sectionElements = getSectionElements()
-      if (sectionElements.length === 0) {
+    const compute = () => {
+      const positions = getPositions()
+      if (positions.length === 0) {
         setActiveSectionId("")
         return
       }
 
-      const positions = sectionElements.map((element) => ({
-        id: element.id,
-        top: element.getBoundingClientRect().top,
-      }))
-
-      let nextActive = ""
-      for (const position of positions) {
-        if (position.top <= headerOffset + 1) {
-          nextActive = position.id
-        }
+      let next = positions[0].id
+      for (const p of positions) {
+        if (p.top <= headerOffset) next = p.id
+        else break
       }
 
-      if (!nextActive) {
-        nextActive = positions[0]?.id ?? ""
-      }
-
-      setActiveSectionId((prev) => (prev === nextActive ? prev : nextActive))
-
-      if (nextActive) {
-        const nextHash = `#${nextActive}`
-        if (window.location.hash !== nextHash) {
-          window.history.replaceState(null, "", nextHash)
-        }
-      }
+      setActiveSectionId((prev) => (prev === next ? prev : next))
     }
 
-    let rafId: number | null = null
-
-    const scheduleCompute = () => {
-      if (rafId !== null) return
-
-      rafId = window.requestAnimationFrame(() => {
-        computeActiveSection()
-        rafId = null
+    let raf: number | null = null
+    const onScroll = () => {
+      if (raf !== null) return
+      raf = window.requestAnimationFrame(() => {
+        compute()
+        raf = null
       })
     }
 
-    scheduleCompute()
-    window.addEventListener("scroll", scheduleCompute, { passive: true })
-    window.addEventListener("hashchange", scheduleCompute)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
 
     return () => {
-      window.removeEventListener("scroll", scheduleCompute)
-      window.removeEventListener("hashchange", scheduleCompute)
-      if (rafId !== null) {
-        window.cancelAnimationFrame(rafId)
-      }
+      window.removeEventListener("scroll", onScroll)
+      if (raf !== null) window.cancelAnimationFrame(raf)
     }
-  }, [enabled, headerOffset, sectionKey, sectionIds])
+  }, [enabled, headerOffset, sectionKey, stableSectionIds])
 
   return activeSectionId
 }
