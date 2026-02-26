@@ -1,0 +1,185 @@
+{
+  "Metadata": {
+    "title": "Moises Escudero — Software Engineer",
+    "description": "Fullstack engineer evolving into AI Systems & Agent Architecture. React, Next.js, TypeScript, fintech, and production-grade systems."
+  },
+  "Navbar": {
+    "about": "About",
+    "projects": "Projects",
+    "labs": "Labs",
+    "writing": "Writing",
+    "contact": "Contact",
+    "toggleTheme": "Toggle theme",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "downloadResume": "Download Resume"
+  },
+  "Hero": {
+    "badge": "Open to opportunities",
+    "titlePrefix": "Fullstack Engineer evolving into",
+    "titleHighlight": "AI Systems & Agent Architecture",
+    "description": "React / Next.js / TypeScript engineer with production experience across fintech, banking, and payment platforms. Currently focused on AI agents, RAG pipelines, evaluation frameworks, and production reliability.",
+    "viewProjects": "View Projects",
+    "contact": "Contact",
+    "terminalFile": "moises.config.ts",
+    "terminalCommand": "moises.background()",
+    "terminalLines": {
+      "0": "React / Next.js / TypeScript",
+      "1": "Fintech, payments & banking systems",
+      "2": "Evolving into AI agents, RAG & MCP"
+    }
+  },
+  "Highlights": {
+    "items": {
+      "0": {
+        "label": "React + TypeScript",
+        "description": "Years of production experience in type-safe frontend systems."
+      },
+      "1": {
+        "label": "Fintech & Payments",
+        "description": "Banking, crowdfunding, insurance, and payment platforms."
+      },
+      "2": {
+        "label": "Fullstack Delivery",
+        "description": "End-to-end systems with GraphQL, MongoDB, Java, and Firebase."
+      },
+      "3": {
+        "label": "AI Systems (Next)",
+        "description": "Building toward RAG, agents, MCP, and evaluation frameworks."
+      }
+    }
+  },
+  "Projects": {
+    "title": "Projects",
+    "subtitle": "Production systems I have designed and shipped across fintech, payments, and insurance.",
+    "featuredLabel": "Featured Project",
+    "readMore": "Read More",
+    "details": "Details",
+    "liveDemo": "Live Demo",
+    "comingSoon": "Coming soon",
+    "filterAll": "All",
+    "aiEvolutionTitle": "Now evolving toward AI systems",
+    "aiEvolutionDescription": "The same production engineering principles behind these projects — clear architecture, rigorous testing, and observability — are now being applied to AI agents, RAG pipelines, and evaluation frameworks.",
+    "items": {
+      "crowdfunding-platform": {
+        "name": "Crowdfunding Platform",
+        "description": "Full-featured investment crowdfunding platform with campaign management, investor dashboards, KYC flows, and real-time funding progress. Served thousands of active users in production."
+      },
+      "parking-automation": {
+        "name": "Parking Automation System",
+        "description": "IoT-integrated parking management system handling gate control, license plate recognition, payment processing, and occupancy tracking across multiple locations."
+      },
+      "insurance-quoting-engine": {
+        "name": "Insurance Quoting Engine",
+        "description": "Remote engagement with a US-based insurance company. Built a dynamic quoting system with multi-step forms, risk calculations, and real-time premium estimation for end consumers."
+      },
+      "banking-payroll": {
+        "name": "Banking & Payroll Systems",
+        "description": "Core banking modules for payroll disbursement, transaction reconciliation, and reporting. Built with Java and integrated with legacy banking infrastructure."
+      },
+      "payment-gateway-crypto": {
+        "name": "Payment Gateway & Crypto E-commerce",
+        "description": "Custom payment gateway supporting fiat and cryptocurrency transactions. Integrated checkout flows, webhook-based settlement, and merchant dashboards."
+      }
+    }
+  },
+  "Labs": {
+    "title": "AI Systems Lab",
+    "subtitle": "Where I am building the next stage of my engineering practice — RAG systems, tool-based agents, MCP integrations, and evaluation harnesses. In progress.",
+    "comingSoon": "Coming soon",
+    "runDemo": "Run Demo",
+    "demoPlaceholderTitle": "Demo placeholder",
+    "demoPlaceholderDescription": "This space will host an interactive {type} demo — chat UI, tool logs, or planning visualization.",
+    "items": {
+      "rag-document-search": {
+        "name": "RAG Document Search",
+        "description": "A retrieval-augmented generation pipeline with citation extraction. Query a knowledge base and inspect how chunks are ranked and referenced."
+      },
+      "tool-calling-sandbox": {
+        "name": "Tool Calling Sandbox",
+        "description": "An agent that picks and executes tools through the Model Context Protocol. Inspect payloads, permissions, and return values in real time."
+      },
+      "agent-eval-harness": {
+        "name": "Agent Evaluation Harness",
+        "description": "Run property-based tests and regression suites against agent outputs. Compare prompt versions and track quality metrics over time."
+      }
+    }
+  },
+  "Principles": {
+    "title": "How I build systems",
+    "subtitle": "Principles shaped by years of shipping production software.",
+    "items": {
+      "0": {
+        "title": "Production-first mindset",
+        "description": "Every feature is built for real users from day one. Performance, error handling, and edge cases are part of the first commit, not an afterthought."
+      },
+      "1": {
+        "title": "Clear architecture over shortcuts",
+        "description": "Well-defined boundaries between layers, explicit data flows, and readable code matter more than clever abstractions. Systems should be easy to reason about."
+      },
+      "2": {
+        "title": "Communication as a technical skill",
+        "description": "Documenting decisions, writing clear PRs, and explaining trade-offs to non-technical stakeholders is as important as writing the code itself."
+      },
+      "3": {
+        "title": "Testing & maintainability",
+        "description": "Automated tests, type safety, and CI pipelines catch regressions before they reach users. Code that cannot be tested confidently cannot be shipped confidently."
+      },
+      "4": {
+        "title": "Evolving toward AI-driven systems",
+        "description": "Applying the same rigor from production engineering to AI: grounded outputs, tool safety, evaluation suites, and cost-aware inference."
+      }
+    }
+  },
+  "About": {
+    "title": "About",
+    "bio1": "I'm Moises Escudero, a Software Engineer from Caracas, Venezuela, with a degree from Universidad Catolica Andres Bello. Over the past years I've built production systems across fintech, banking, insurance, crowdfunding, parking automation, and payment platforms — primarily with React, Next.js, TypeScript, GraphQL, MongoDB, Java, and Firebase.",
+    "bio2": "I'm now channeling that production engineering background into AI systems. The same principles that keep financial platforms reliable — clear architecture, rigorous testing, observability, and explicit failure handling — apply directly to building trustworthy AI agents, RAG pipelines, and evaluation frameworks. This is not a pivot away from engineering; it's the next layer of it.",
+    "coreStrengthsTitle": "Core Strengths",
+    "techStackTitle": "Tech Stack",
+    "strengths": {
+      "0": "Pragmatic problem solving  delivering production systems in fintech, insurance, and payments.",
+      "1": "Strong communication  explaining architecture decisions to technical and non-technical stakeholders.",
+      "2": "Leadership & teamwork  coordinating cross-functional delivery in distributed teams.",
+      "3": "Testing & maintainability  CI pipelines, type safety, and automated regression checks.",
+      "4": "Systematic learner  applying production engineering rigor to AI agents, RAG, and evaluation."
+    }
+  },
+  "Writing": {
+    "title": "Engineering Notes",
+    "subtitle": "AI, architecture, and production systems.",
+    "viewAllPosts": "View all posts",
+    "items": {
+      "fintech-to-ai-agents": {
+        "title": "From fintech frontends to AI agents: why the transition makes sense",
+        "excerpt": "Production systems taught me reliability, testing, and architecture. Those same principles apply directly to building trustworthy AI agents."
+      },
+      "eval-first-llm-dev": {
+        "title": "Evaluation-first development for LLM applications",
+        "excerpt": "Shipping a prompt without an eval suite is like deploying without tests. A practical framework for measuring agent quality."
+      },
+      "mcp-tool-agents": {
+        "title": "What the Model Context Protocol means for tool-based agents",
+        "excerpt": "MCP standardizes how agents discover and call tools. Notes on schema validation, auth scoping, and composability."
+      }
+    }
+  },
+  "Contact": {
+    "title": "Get in touch",
+    "description": "Based in Caracas, Venezuela. Open to remote opportunities across LATAM, the US, and Europe. Interested in working together or have a question? Drop me a message.",
+    "findMeOn": "Find me on",
+    "sendMessage": "Send a message",
+    "formBadge": "Form wiring coming soon",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project or question...",
+    "sendButton": "Send Message"
+  },
+  "Footer": {
+    "copyright": "Moises Escudero. All rights reserved.",
+    "builtWith": "Built with Next.js, Tailwind CSS & shadcn/ui"
+  }
+}

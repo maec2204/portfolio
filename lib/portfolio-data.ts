@@ -7,21 +7,19 @@ import type {
   Highlight,
   NavLink,
   TechStackItem,
-  TerminalLine,
-  StrengthItem,
   SocialLink,
 } from "./portfolio-types"
 
 // ---------------------------------------------------------------------------
-// Projects
+// Projects — text fields moved to messages/{locale}.json
+// Components resolve names/descriptions via useTranslations("Projects")
 // ---------------------------------------------------------------------------
 
 export const PROJECTS: Project[] = [
   {
     name: "Crowdfunding Platform",
     slug: "crowdfunding-platform",
-    description:
-      "Full-featured investment crowdfunding platform with campaign management, investor dashboards, KYC flows, and real-time funding progress. Served thousands of active users in production.",
+    description: "",
     tags: ["React", "Fullstack", "Fintech"],
     featured: true,
     hasDemo: false,
@@ -30,8 +28,7 @@ export const PROJECTS: Project[] = [
   {
     name: "Parking Automation System",
     slug: "parking-automation",
-    description:
-      "IoT-integrated parking management system handling gate control, license plate recognition, payment processing, and occupancy tracking across multiple locations.",
+    description: "",
     tags: ["Fullstack", "Fintech"],
     featured: false,
     hasDemo: false,
@@ -40,8 +37,7 @@ export const PROJECTS: Project[] = [
   {
     name: "Insurance Quoting Engine",
     slug: "insurance-quoting-engine",
-    description:
-      "Remote engagement with a US-based insurance company. Built a dynamic quoting system with multi-step forms, risk calculations, and real-time premium estimation for end consumers.",
+    description: "",
     tags: ["React", "Fullstack"],
     featured: false,
     hasDemo: false,
@@ -50,8 +46,7 @@ export const PROJECTS: Project[] = [
   {
     name: "Banking & Payroll Systems",
     slug: "banking-payroll",
-    description:
-      "Core banking modules for payroll disbursement, transaction reconciliation, and reporting. Built with Java and integrated with legacy banking infrastructure.",
+    description: "",
     tags: ["Java", "Fintech"],
     featured: false,
     hasDemo: false,
@@ -60,8 +55,7 @@ export const PROJECTS: Project[] = [
   {
     name: "Payment Gateway & Crypto E-commerce",
     slug: "payment-gateway-crypto",
-    description:
-      "Custom payment gateway supporting fiat and cryptocurrency transactions. Integrated checkout flows, webhook-based settlement, and merchant dashboards.",
+    description: "",
     tags: ["Fullstack", "Fintech", "React"],
     featured: false,
     hasDemo: false,
@@ -91,8 +85,7 @@ export const LABS: Lab[] = [
     slug: "rag-document-search",
     type: "RAG",
     icon: "MessageSquare",
-    description:
-      "A retrieval-augmented generation pipeline with citation extraction. Query a knowledge base and inspect how chunks are ranked and referenced.",
+    description: "",
     status: "coming-soon",
   },
   {
@@ -100,8 +93,7 @@ export const LABS: Lab[] = [
     slug: "tool-calling-sandbox",
     type: "MCP",
     icon: "Wrench",
-    description:
-      "An agent that picks and executes tools through the Model Context Protocol. Inspect payloads, permissions, and return values in real time.",
+    description: "",
     status: "coming-soon",
   },
   {
@@ -109,8 +101,7 @@ export const LABS: Lab[] = [
     slug: "agent-eval-harness",
     type: "Evals",
     icon: "Brain",
-    description:
-      "Run property-based tests and regression suites against agent outputs. Compare prompt versions and track quality metrics over time.",
+    description: "",
     status: "coming-soon",
   },
 ]
@@ -120,40 +111,15 @@ export const LABS: Lab[] = [
 // ---------------------------------------------------------------------------
 
 export const PRINCIPLES: Principle[] = [
-  {
-    title: "Production-first mindset",
-    description:
-      "Every feature is built for real users from day one. Performance, error handling, and edge cases are part of the first commit, not an afterthought.",
-    icon: "Rocket",
-  },
-  {
-    title: "Clear architecture over shortcuts",
-    description:
-      "Well-defined boundaries between layers, explicit data flows, and readable code matter more than clever abstractions. Systems should be easy to reason about.",
-    icon: "Layers",
-  },
-  {
-    title: "Communication as a technical skill",
-    description:
-      "Documenting decisions, writing clear PRs, and explaining trade-offs to non-technical stakeholders is as important as writing the code itself.",
-    icon: "MessageSquare",
-  },
-  {
-    title: "Testing & maintainability",
-    description:
-      "Automated tests, type safety, and CI pipelines catch regressions before they reach users. Code that cannot be tested confidently cannot be shipped confidently.",
-    icon: "TestTubeDiagonal",
-  },
-  {
-    title: "Evolving toward AI-driven systems",
-    description:
-      "Applying the same rigor from production engineering to AI: grounded outputs, tool safety, evaluation suites, and cost-aware inference.",
-    icon: "TrendingUp",
-  },
+  { title: "", description: "", icon: "Rocket" },
+  { title: "", description: "", icon: "Layers" },
+  { title: "", description: "", icon: "MessageSquare" },
+  { title: "", description: "", icon: "TestTubeDiagonal" },
+  { title: "", description: "", icon: "TrendingUp" },
 ]
 
 // ---------------------------------------------------------------------------
-// Tech Stack
+// Tech Stack (not translated — brand names)
 // ---------------------------------------------------------------------------
 
 export const TECH_STACK: TechStackItem[] = [
@@ -179,76 +145,47 @@ export const TECH_STACK: TechStackItem[] = [
 
 export const POSTS: Post[] = [
   {
-    title: "From fintech frontends to AI agents: why the transition makes sense",
+    title: "",
     slug: "fintech-to-ai-agents",
-    excerpt:
-      "Production systems taught me reliability, testing, and architecture. Those same principles apply directly to building trustworthy AI agents.",
+    excerpt: "",
     date: "2026-02-15",
   },
   {
-    title: "Evaluation-first development for LLM applications",
+    title: "",
     slug: "eval-first-llm-dev",
-    excerpt:
-      "Shipping a prompt without an eval suite is like deploying without tests. A practical framework for measuring agent quality.",
+    excerpt: "",
     date: "2026-01-28",
   },
   {
-    title: "What the Model Context Protocol means for tool-based agents",
+    title: "",
     slug: "mcp-tool-agents",
-    excerpt:
-      "MCP standardizes how agents discover and call tools. Notes on schema validation, auth scoping, and composability.",
+    excerpt: "",
     date: "2026-01-10",
   },
 ]
 
 // ---------------------------------------------------------------------------
-// Terminal Lines (hero animation)
+// Terminal line count (hero animation)
 // ---------------------------------------------------------------------------
 
-export const TERMINAL_LINES: TerminalLine[] = [
-  "React / Next.js / TypeScript",
-  "Fintech, payments & banking systems",
-  "Evolving into AI agents, RAG & MCP",
-]
+export const TERMINAL_LINE_COUNT = 3
 
 // ---------------------------------------------------------------------------
 // Highlights (proof strip)
 // ---------------------------------------------------------------------------
 
 export const HIGHLIGHTS: Highlight[] = [
-  {
-    label: "React + TypeScript",
-    description: "Years of production experience in type-safe frontend systems.",
-    icon: "Code2",
-  },
-  {
-    label: "Fintech & Payments",
-    description: "Banking, crowdfunding, insurance, and payment platforms.",
-    icon: "Landmark",
-  },
-  {
-    label: "Fullstack Delivery",
-    description: "End-to-end systems with GraphQL, MongoDB, Java, and Firebase.",
-    icon: "Layers",
-  },
-  {
-    label: "AI Systems (Next)",
-    description: "Building toward RAG, agents, MCP, and evaluation frameworks.",
-    icon: "TrendingUp",
-  },
+  { label: "", description: "", icon: "Code2" },
+  { label: "", description: "", icon: "Landmark" },
+  { label: "", description: "", icon: "Layers" },
+  { label: "", description: "", icon: "TrendingUp" },
 ]
 
 // ---------------------------------------------------------------------------
 // About / Contact
 // ---------------------------------------------------------------------------
 
-export const CORE_STRENGTHS: StrengthItem[] = [
-  "Pragmatic problem solving  delivering production systems in fintech, insurance, and payments.",
-  "Strong communication  explaining architecture decisions to technical and non-technical stakeholders.",
-  "Leadership & teamwork  coordinating cross-functional delivery in distributed teams.",
-  "Testing & maintainability  CI pipelines, type safety, and automated regression checks.",
-  "Systematic learner  applying production engineering rigor to AI agents, RAG, and evaluation.",
-]
+export const CORE_STRENGTH_COUNT = 5
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { label: "GitHub", href: "#", icon: "Github" },
@@ -258,13 +195,13 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ]
 
 // ---------------------------------------------------------------------------
-// Navigation
+// Navigation — labels are now resolved via useTranslations("Navbar")
 // ---------------------------------------------------------------------------
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Labs", href: "#labs" },
-  { label: "Writing", href: "#writing" },
-  { label: "Contact", href: "#contact" },
+  { label: "about", href: "#about" },
+  { label: "projects", href: "#projects" },
+  { label: "labs", href: "#labs" },
+  { label: "writing", href: "#writing" },
+  { label: "contact", href: "#contact" },
 ]

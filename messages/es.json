@@ -1,0 +1,185 @@
+{
+  "Metadata": {
+    "title": "Moises Escudero — Ingeniero de Software",
+    "description": "Ingeniero fullstack evolucionando hacia Sistemas de IA y Arquitectura de Agentes. React, Next.js, TypeScript, fintech y sistemas de produccion."
+  },
+  "Navbar": {
+    "about": "Acerca",
+    "projects": "Proyectos",
+    "labs": "Laboratorio",
+    "writing": "Escritos",
+    "contact": "Contacto",
+    "toggleTheme": "Cambiar tema",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Cerrar menu",
+    "downloadResume": "Descargar CV"
+  },
+  "Hero": {
+    "badge": "Abierto a oportunidades",
+    "titlePrefix": "Ingeniero Fullstack evolucionando hacia",
+    "titleHighlight": "Sistemas de IA y Arquitectura de Agentes",
+    "description": "Ingeniero React / Next.js / TypeScript con experiencia en produccion en fintech, banca y plataformas de pago. Actualmente enfocado en agentes de IA, pipelines RAG, frameworks de evaluacion y fiabilidad en produccion.",
+    "viewProjects": "Ver Proyectos",
+    "contact": "Contacto",
+    "terminalFile": "moises.config.ts",
+    "terminalCommand": "moises.background()",
+    "terminalLines": {
+      "0": "React / Next.js / TypeScript",
+      "1": "Fintech, pagos y sistemas bancarios",
+      "2": "Evolucionando hacia agentes IA, RAG y MCP"
+    }
+  },
+  "Highlights": {
+    "items": {
+      "0": {
+        "label": "React + TypeScript",
+        "description": "Anos de experiencia en produccion con sistemas frontend tipados."
+      },
+      "1": {
+        "label": "Fintech y Pagos",
+        "description": "Banca, crowdfunding, seguros y plataformas de pago."
+      },
+      "2": {
+        "label": "Entrega Fullstack",
+        "description": "Sistemas de extremo a extremo con GraphQL, MongoDB, Java y Firebase."
+      },
+      "3": {
+        "label": "Sistemas de IA (Proximo)",
+        "description": "Construyendo hacia RAG, agentes, MCP y frameworks de evaluacion."
+      }
+    }
+  },
+  "Projects": {
+    "title": "Proyectos",
+    "subtitle": "Sistemas en produccion que he disenado y entregado en fintech, pagos y seguros.",
+    "featuredLabel": "Proyecto Destacado",
+    "readMore": "Leer Mas",
+    "details": "Detalles",
+    "liveDemo": "Demo en Vivo",
+    "comingSoon": "Proximamente",
+    "filterAll": "Todos",
+    "aiEvolutionTitle": "Evolucionando hacia sistemas de IA",
+    "aiEvolutionDescription": "Los mismos principios de ingenieria de produccion detras de estos proyectos — arquitectura clara, pruebas rigurosas y observabilidad — se estan aplicando ahora a agentes de IA, pipelines RAG y frameworks de evaluacion.",
+    "items": {
+      "crowdfunding-platform": {
+        "name": "Plataforma de Crowdfunding",
+        "description": "Plataforma de crowdfunding de inversion con gestion de campanas, dashboards para inversores, flujos KYC y progreso de financiamiento en tiempo real. Sirvio a miles de usuarios activos en produccion."
+      },
+      "parking-automation": {
+        "name": "Sistema de Automatizacion de Estacionamiento",
+        "description": "Sistema de gestion de estacionamiento integrado con IoT que maneja control de puertas, reconocimiento de placas, procesamiento de pagos y seguimiento de ocupacion en multiples ubicaciones."
+      },
+      "insurance-quoting-engine": {
+        "name": "Motor de Cotizacion de Seguros",
+        "description": "Trabajo remoto con una compania de seguros en EE.UU. Construi un sistema dinamico de cotizacion con formularios multi-paso, calculos de riesgo y estimacion de primas en tiempo real."
+      },
+      "banking-payroll": {
+        "name": "Sistemas Bancarios y de Nomina",
+        "description": "Modulos bancarios centrales para desembolso de nomina, reconciliacion de transacciones y reportes. Construido con Java e integrado con infraestructura bancaria heredada."
+      },
+      "payment-gateway-crypto": {
+        "name": "Pasarela de Pagos y E-commerce Crypto",
+        "description": "Pasarela de pagos personalizada con soporte para transacciones fiat y criptomonedas. Flujos de checkout integrados, liquidacion basada en webhooks y dashboards para comerciantes."
+      }
+    }
+  },
+  "Labs": {
+    "title": "Laboratorio de Sistemas de IA",
+    "subtitle": "Donde estoy construyendo la siguiente etapa de mi practica de ingenieria — sistemas RAG, agentes basados en herramientas, integraciones MCP y arneses de evaluacion. En progreso.",
+    "comingSoon": "Proximamente",
+    "runDemo": "Ejecutar Demo",
+    "demoPlaceholderTitle": "Placeholder del demo",
+    "demoPlaceholderDescription": "Este espacio albergara un demo interactivo de {type} — interfaz de chat, logs de herramientas o visualizacion de planificacion.",
+    "items": {
+      "rag-document-search": {
+        "name": "Busqueda de Documentos RAG",
+        "description": "Pipeline de generacion aumentada por recuperacion con extraccion de citas. Consulta una base de conocimiento e inspecciona como se clasifican y referencian los fragmentos."
+      },
+      "tool-calling-sandbox": {
+        "name": "Sandbox de Llamadas a Herramientas",
+        "description": "Un agente que selecciona y ejecuta herramientas a traves del Model Context Protocol. Inspecciona payloads, permisos y valores de retorno en tiempo real."
+      },
+      "agent-eval-harness": {
+        "name": "Arnes de Evaluacion de Agentes",
+        "description": "Ejecuta pruebas basadas en propiedades y suites de regresion contra las salidas del agente. Compara versiones de prompts y rastrea metricas de calidad a lo largo del tiempo."
+      }
+    }
+  },
+  "Principles": {
+    "title": "Como construyo sistemas",
+    "subtitle": "Principios formados por anos de entregar software en produccion.",
+    "items": {
+      "0": {
+        "title": "Mentalidad de produccion primero",
+        "description": "Cada funcionalidad se construye para usuarios reales desde el primer dia. El rendimiento, el manejo de errores y los casos limite son parte del primer commit, no una idea posterior."
+      },
+      "1": {
+        "title": "Arquitectura clara sobre atajos",
+        "description": "Limites bien definidos entre capas, flujos de datos explicitos y codigo legible importan mas que abstracciones ingeniosas. Los sistemas deben ser faciles de razonar."
+      },
+      "2": {
+        "title": "Comunicacion como habilidad tecnica",
+        "description": "Documentar decisiones, escribir PRs claros y explicar compromisos a stakeholders no tecnicos es tan importante como escribir el codigo mismo."
+      },
+      "3": {
+        "title": "Pruebas y mantenibilidad",
+        "description": "Pruebas automatizadas, seguridad de tipos y pipelines CI detectan regresiones antes de que lleguen a los usuarios. El codigo que no se puede probar con confianza no se puede entregar con confianza."
+      },
+      "4": {
+        "title": "Evolucionando hacia sistemas impulsados por IA",
+        "description": "Aplicando el mismo rigor de la ingenieria de produccion a la IA: salidas fundamentadas, seguridad de herramientas, suites de evaluacion e inferencia consciente de costos."
+      }
+    }
+  },
+  "About": {
+    "title": "Acerca",
+    "bio1": "Soy Moises Escudero, Ingeniero de Software de Caracas, Venezuela, con titulo de la Universidad Catolica Andres Bello. En los ultimos anos he construido sistemas en produccion en fintech, banca, seguros, crowdfunding, automatizacion de estacionamientos y plataformas de pago — principalmente con React, Next.js, TypeScript, GraphQL, MongoDB, Java y Firebase.",
+    "bio2": "Ahora estoy canalizando esa experiencia en ingenieria de produccion hacia sistemas de IA. Los mismos principios que mantienen confiables las plataformas financieras — arquitectura clara, pruebas rigurosas, observabilidad y manejo explicito de fallos — aplican directamente a la construccion de agentes de IA confiables, pipelines RAG y frameworks de evaluacion. Esto no es un giro lejos de la ingenieria; es la siguiente capa.",
+    "coreStrengthsTitle": "Fortalezas Principales",
+    "techStackTitle": "Stack Tecnologico",
+    "strengths": {
+      "0": "Resolucion pragmatica de problemas  entregando sistemas en produccion en fintech, seguros y pagos.",
+      "1": "Comunicacion solida  explicando decisiones de arquitectura a stakeholders tecnicos y no tecnicos.",
+      "2": "Liderazgo y trabajo en equipo  coordinando entregas multifuncionales en equipos distribuidos.",
+      "3": "Pruebas y mantenibilidad  pipelines CI, seguridad de tipos y verificaciones automaticas de regresion.",
+      "4": "Aprendiz sistematico  aplicando el rigor de ingenieria de produccion a agentes de IA, RAG y evaluacion."
+    }
+  },
+  "Writing": {
+    "title": "Notas de Ingenieria",
+    "subtitle": "IA, arquitectura y sistemas de produccion.",
+    "viewAllPosts": "Ver todos los posts",
+    "items": {
+      "fintech-to-ai-agents": {
+        "title": "De frontends fintech a agentes de IA: por que la transicion tiene sentido",
+        "excerpt": "Los sistemas en produccion me ensenaron fiabilidad, pruebas y arquitectura. Esos mismos principios aplican directamente a construir agentes de IA confiables."
+      },
+      "eval-first-llm-dev": {
+        "title": "Desarrollo evaluation-first para aplicaciones LLM",
+        "excerpt": "Entregar un prompt sin una suite de evaluacion es como desplegar sin pruebas. Un framework practico para medir la calidad del agente."
+      },
+      "mcp-tool-agents": {
+        "title": "Lo que el Model Context Protocol significa para agentes basados en herramientas",
+        "excerpt": "MCP estandariza como los agentes descubren y llaman herramientas. Notas sobre validacion de esquemas, alcance de autorizacion y composabilidad."
+      }
+    }
+  },
+  "Contact": {
+    "title": "Contacto",
+    "description": "Con base en Caracas, Venezuela. Abierto a oportunidades remotas en LATAM, EE.UU. y Europa. Interesado en trabajar juntos o tienes alguna pregunta? Enviame un mensaje.",
+    "findMeOn": "Encuentrame en",
+    "sendMessage": "Enviar un mensaje",
+    "formBadge": "Formulario proximamente",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "emailLabel": "Correo",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Cuentame sobre tu proyecto o pregunta...",
+    "sendButton": "Enviar Mensaje"
+  },
+  "Footer": {
+    "copyright": "Moises Escudero. Todos los derechos reservados.",
+    "builtWith": "Construido con Next.js, Tailwind CSS y shadcn/ui"
+  }
+}

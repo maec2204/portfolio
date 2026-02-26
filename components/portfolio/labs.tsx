@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -31,6 +32,8 @@ const LAB_ICONS: Record<LabIcon, LucideIcon> = {
 }
 
 export function Labs() {
+  const t = useTranslations("Labs")
+
   return (
     <section
       id="labs"
@@ -41,10 +44,10 @@ export function Labs() {
           <FlaskConical className="size-6 text-primary" />
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-foreground">
-              AI Systems Lab
+              {t("title")}
             </h2>
             <p className="mt-1 text-muted-foreground">
-              Where I am building the next stage of my engineering practice — RAG systems, tool-based agents, MCP integrations, and evaluation harnesses. In progress.
+              {t("subtitle")}
             </p>
           </div>
         </div>
@@ -52,9 +55,10 @@ export function Labs() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {LABS.map((lab) => {
             const Icon = LAB_ICONS[lab.icon]
+            const slug = lab.slug!
             return (
               <Card
-                key={lab.name}
+                key={slug}
                 className="group flex flex-col transition-shadow hover:shadow-lg hover:shadow-primary/5"
               >
                 <CardHeader>
@@ -66,9 +70,11 @@ export function Labs() {
                       {lab.type}
                     </Badge>
                   </div>
-                  <CardTitle className="text-base">{lab.name}</CardTitle>
+                  <CardTitle className="text-base">
+                    {t(`items.${slug}.name`)}
+                  </CardTitle>
                   <CardDescription className="text-sm leading-relaxed">
-                    {lab.description}
+                    {t(`items.${slug}.description`)}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="mt-auto">
@@ -76,7 +82,7 @@ export function Labs() {
                     variant="secondary"
                     className="text-[11px] text-muted-foreground"
                   >
-                    Coming soon
+                    {t("comingSoon")}
                   </Badge>
                 </CardContent>
                 <CardFooter>
@@ -84,14 +90,14 @@ export function Labs() {
                     <DialogTrigger asChild>
                       <Button variant="outline" size="sm" className="gap-2">
                         <Play className="size-3" />
-                        Run Demo
+                        {t("runDemo")}
                       </Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-2xl">
                       <DialogHeader>
-                        <DialogTitle>{lab.name}</DialogTitle>
+                        <DialogTitle>{t(`items.${slug}.name`)}</DialogTitle>
                         <DialogDescription>
-                          {lab.description}
+                          {t(`items.${slug}.description`)}
                         </DialogDescription>
                       </DialogHeader>
                       <Separator />
@@ -101,12 +107,12 @@ export function Labs() {
                         </div>
                         <div>
                           <p className="font-medium text-foreground">
-                            Demo placeholder
+                            {t("demoPlaceholderTitle")}
                           </p>
                           <p className="mt-1 text-sm text-muted-foreground">
-                            This space will host an interactive {lab.type}{" "}
-                            demo — chat UI, tool logs, or planning
-                            visualization.
+                            {t("demoPlaceholderDescription", {
+                              type: lab.type,
+                            })}
                           </p>
                         </div>
                       </div>

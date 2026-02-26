@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -21,6 +22,7 @@ import type { FilterTag } from "@/lib/portfolio-types"
 import { ArrowRight, ExternalLink, Star, TrendingUp } from "lucide-react"
 
 export function Projects() {
+  const t = useTranslations("Projects")
   const [activeFilter, setActiveFilter] = useState<FilterTag>("All")
 
   const featured = PROJECTS.find((p) => p.featured)
@@ -37,10 +39,10 @@ export function Projects() {
         {/* Header */}
         <div className="mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
-            Projects
+            {t("title")}
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Production systems I have designed and shipped across fintech, payments, and insurance.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -52,14 +54,14 @@ export function Projects() {
                 <div className="mb-3 flex items-center gap-2">
                   <Star className="size-4 text-primary" />
                   <span className="text-xs font-medium uppercase tracking-wider text-primary">
-                    Featured Project
+                    {t("featuredLabel")}
                   </span>
                 </div>
                 <h3 className="text-xl font-bold text-foreground lg:text-2xl">
-                  {featured.name}
+                  {t(`items.${featured.slug}.name`)}
                 </h3>
                 <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
-                  {featured.description}
+                  {t(`items.${featured.slug}.description`)}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {featured.tags.map((tag) => (
@@ -71,7 +73,7 @@ export function Projects() {
               </div>
               <div className="shrink-0">
                 <Button size="lg" className="gap-2">
-                  Read More
+                  {t("readMore")}
                   <ArrowRight className="size-4" />
                 </Button>
               </div>
@@ -91,7 +93,7 @@ export function Projects() {
                   : "bg-secondary text-muted-foreground hover:text-foreground"
               }`}
             >
-              {tag}
+              {tag === "All" ? t("filterAll") : tag}
             </button>
           ))}
         </div>
@@ -100,13 +102,15 @@ export function Projects() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((project) => (
             <Card
-              key={project.name}
+              key={project.slug}
               className="group flex flex-col transition-shadow hover:shadow-lg hover:shadow-primary/5"
             >
               <CardHeader>
-                <CardTitle className="text-base">{project.name}</CardTitle>
+                <CardTitle className="text-base">
+                  {t(`items.${project.slug}.name`)}
+                </CardTitle>
                 <CardDescription className="text-sm leading-relaxed">
-                  {project.description}
+                  {t(`items.${project.slug}.description`)}
                 </CardDescription>
               </CardHeader>
               <CardContent className="mt-auto">
@@ -124,13 +128,13 @@ export function Projects() {
               </CardContent>
               <CardFooter className="gap-2">
                 <Button variant="outline" size="sm" className="gap-1.5">
-                  Details
+                  {t("details")}
                   <ArrowRight className="size-3" />
                 </Button>
                 {project.hasDemo ? (
                   <Button variant="ghost" size="sm" className="gap-1.5">
                     <ExternalLink className="size-3" />
-                    Live Demo
+                    {t("liveDemo")}
                   </Button>
                 ) : (
                   <Tooltip>
@@ -142,10 +146,10 @@ export function Projects() {
                         disabled
                       >
                         <ExternalLink className="size-3" />
-                        Live Demo
+                        {t("liveDemo")}
                       </Button>
                     </TooltipTrigger>
-                    <TooltipContent>Coming soon</TooltipContent>
+                    <TooltipContent>{t("comingSoon")}</TooltipContent>
                   </Tooltip>
                 )}
               </CardFooter>
@@ -160,10 +164,10 @@ export function Projects() {
           </div>
           <div>
             <h3 className="text-sm font-semibold text-foreground">
-              Now evolving toward AI systems
+              {t("aiEvolutionTitle")}
             </h3>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              The same production engineering principles behind these projects — clear architecture, rigorous testing, and observability — are now being applied to AI agents, RAG pipelines, and evaluation frameworks.
+              {t("aiEvolutionDescription")}
             </p>
           </div>
         </div>
