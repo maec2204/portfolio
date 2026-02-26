@@ -5,6 +5,7 @@ import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { NAV_LINKS } from "@/lib/portfolio-data"
 import { getResumeUrl } from "@/lib/resume"
+import { resolveSectionHref } from "@/lib/nav"
 import { cn } from "@/lib/utils"
 import { usePathname, useRouter, Link } from "@/i18n/navigation"
 import type { AppLocale } from "@/i18n/routing"
@@ -57,11 +58,6 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
 
   const activeSectionId = manualActiveSectionId || activeSectionFromScroll
 
-  const resolveSectionHref = (href: string) => {
-    if (!href.startsWith("#")) return href
-    return isHome ? href : `/${locale}${href}`
-  }
-
   const isActiveLink = (href: string) => {
     if (href.startsWith("#")) {
       return isHome && activeSectionId === href.slice(1)
@@ -108,7 +104,7 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
-                href={resolveSectionHref(link.href)}
+                href={resolveSectionHref(link.href, locale, pathname)}
                 className={cn(
                   "rounded-lg px-3 py-2 text-sm transition-colors",
                   isActiveLink(link.href)
@@ -212,7 +208,7 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
-                  href={resolveSectionHref(link.href)}
+                  href={resolveSectionHref(link.href, locale, pathname)}
                   className={cn(
                     "block rounded-lg px-3 py-2.5 text-sm transition-colors",
                     isActiveLink(link.href)

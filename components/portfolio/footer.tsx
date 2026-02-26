@@ -1,10 +1,16 @@
+"use client"
+
 import { Separator } from "@/components/ui/separator"
 import { NAV_LINKS } from "@/lib/portfolio-data"
+import { resolveSectionHref } from "@/lib/nav"
+import { usePathname } from "@/i18n/navigation"
 import { Terminal } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
 export function Footer() {
   const t = useTranslations()
+  const locale = useLocale()
+  const pathname = usePathname()
 
   return (
     <footer className="border-t border-border/40">
@@ -21,7 +27,7 @@ export function Footer() {
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
-                    href={link.href}
+                    href={resolveSectionHref(link.href, locale, pathname)}
                     className="text-xs text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {t(link.labelKey)}
