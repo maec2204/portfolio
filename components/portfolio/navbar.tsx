@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { NAV_LINKS } from "@/lib/portfolio-data"
@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils"
 import { usePathname, useRouter, Link } from "@/i18n/navigation"
 import type { AppLocale } from "@/i18n/routing"
 import { useLocale, useTranslations } from "next-intl"
+import { useActiveSection } from "@/components/portfolio/hooks/use-active-section"
 import {
   Download,
   Menu,
@@ -20,7 +21,7 @@ import {
 
 export function Navbar({ locale: localeProp }: { locale?: string }) {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [activeHash, setActiveHash] = useState("")
+  const [manualActiveSectionId, setManualActiveSectionId] = useState("")
   const { theme, setTheme } = useTheme()
   const t = useTranslations()
   const localeFromIntl = useLocale() as AppLocale
@@ -28,29 +29,42 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
   const pathname = usePathname()
   const router = useRouter()
   const resumeUrl = getResumeUrl(locale)
-  const isHome = pathname === `/${locale}` || pathname === "/"
+  const isHome = pathname === `/${locale}`
+  const sectionIds = useMemo(
+    () => NAV_LINKS.filter((link) => link.href.startsWith("#")).map((link) => link.href.slice(1)),
+    []
+  )
+
+  const activeSectionFromScroll = useActiveSection({
+    enabled: isHome,
+    sectionIds,
+    headerOffset: 96,
+  })
 
   useEffect(() => {
-    const updateHash = () => {
-      setActiveHash(window.location.hash)
+    if (!isHome) {
+      setManualActiveSectionId("")
+      return
     }
 
-    updateHash()
-    window.addEventListener("hashchange", updateHash)
-
-    return () => {
-      window.removeEventListener("hashchange", updateHash)
+    if (
+      manualActiveSectionId &&
+      activeSectionFromScroll === manualActiveSectionId
+    ) {
+      setManualActiveSectionId("")
     }
-  }, [])
+  }, [activeSectionFromScroll, isHome, manualActiveSectionId])
+
+  const activeSectionId = manualActiveSectionId || activeSectionFromScroll
 
   const resolveSectionHref = (href: string) => {
     if (!href.startsWith("#")) return href
     return isHome ? href : `/${locale}${href}`
   }
 
-  const isActive = (href: string) => {
+  const isActiveLink = (href: string) => {
     if (href.startsWith("#")) {
-      return isHome && activeHash === href
+      return isHome && activeSectionId === href.slice(1)
     }
 
     if (href === "/journey") {
@@ -58,6 +72,11 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
     }
 
     return false
+  }
+
+  const handleSectionLinkClick = (href: string) => {
+    if (!isHome || !href.startsWith("#")) return
+    setManualActiveSectionId(href.slice(1))
   }
 
   const handleLocaleChange = (nextLocale: AppLocale) => {
@@ -92,10 +111,11 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
                 href={resolveSectionHref(link.href)}
                 className={cn(
                   "rounded-lg px-3 py-2 text-sm transition-colors",
-                  isActive(link.href)
+                  isActiveLink(link.href)
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 )}
+                onClick={() => handleSectionLinkClick(link.href)}
               >
                 {t(link.labelKey)}
               </a>
@@ -106,7 +126,7 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
               href="/journey"
               className={cn(
                 "rounded-lg px-3 py-2 text-sm transition-colors",
-                isActive("/journey")
+                isActiveLink("/journey")
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground"
               )}
@@ -195,11 +215,14 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
                   href={resolveSectionHref(link.href)}
                   className={cn(
                     "block rounded-lg px-3 py-2.5 text-sm transition-colors",
-                    isActive(link.href)
+                    isActiveLink(link.href)
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
                   )}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => {
+                    handleSectionLinkClick(link.href)
+                    setMobileOpen(false)
+                  }}
                 >
                   {t(link.labelKey)}
                 </a>
@@ -210,7 +233,7 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
                 href="/journey"
                 className={cn(
                   "block rounded-lg px-3 py-2.5 text-sm transition-colors",
-                  isActive("/journey")
+                  isActiveLink("/journey")
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 )}
