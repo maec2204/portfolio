@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -18,6 +19,66 @@ const SOCIAL_ICON_MAP: Record<SocialIcon, LucideIcon> = {
 
 export function Contact() {
   const t = useTranslations()
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [successMessage, setSuccessMessage] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const trimmedName = name.trim()
+    const trimmedEmail = email.trim()
+    const trimmedMessage = message.trim()
+
+    if (!trimmedName || !trimmedEmail || !trimmedMessage) {
+      setSuccessMessage("")
+      setErrorMessage(t("contact.form.validationRequired"))
+      return
+    }
+
+    if (!trimmedEmail.includes("@")) {
+      setSuccessMessage("")
+      setErrorMessage(t("contact.form.validationEmail"))
+      return
+    }
+
+    setIsSubmitting(true)
+    setSuccessMessage("")
+    setErrorMessage("")
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: trimmedName,
+          email: trimmedEmail,
+          message: trimmedMessage,
+        }),
+      })
+
+      const data = (await response.json()) as { success?: boolean; error?: string }
+
+      if (!response.ok || !data.success) {
+        setErrorMessage(data.error || t("contact.form.error"))
+        return
+      }
+
+      setSuccessMessage(t("contact.form.success"))
+      setName("")
+      setEmail("")
+      setMessage("")
+    } catch {
+      setErrorMessage(t("contact.form.error"))
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <section
@@ -78,7 +139,7 @@ export function Contact() {
             </div>
             <form
               className="flex flex-col gap-4"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
             >
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
@@ -92,6 +153,10 @@ export function Contact() {
                     id="contact-name"
                     placeholder={t("contact.form.namePlaceholder")}
                     autoComplete="name"
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                    required
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -106,6 +171,10 @@ export function Contact() {
                     type="email"
                     placeholder={t("contact.form.emailPlaceholder")}
                     autoComplete="email"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    required
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -120,11 +189,21 @@ export function Contact() {
                   id="contact-message"
                   placeholder={t("contact.form.messagePlaceholder")}
                   rows={5}
+                  value={message}
+                  onChange={(event) => setMessage(event.target.value)}
+                  required
+                  disabled={isSubmitting}
                 />
               </div>
-              <Button type="submit" className="w-full gap-2 sm:w-auto">
+              {successMessage && (
+                <p className="text-sm text-emerald-500">{successMessage}</p>
+              )}
+              {errorMessage && (
+                <p className="text-sm text-red-500">{errorMessage}</p>
+              )}
+              <Button type="submit" className="w-full gap-2 sm:w-auto" disabled={isSubmitting}>
                 <Mail className="size-4" />
-                {t("contact.form.submit")}
+                {isSubmitting ? t("contact.form.sending") : t("contact.form.submit")}
               </Button>
             </form>
           </div>

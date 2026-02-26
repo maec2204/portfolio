@@ -138,7 +138,12 @@
       "emailPlaceholder": "tu@ejemplo.com",
       "message": "Mensaje",
       "messagePlaceholder": "Cuéntame sobre tu proyecto o consulta...",
-      "submit": "Enviar mensaje"
+      "submit": "Enviar mensaje",
+      "sending": "Enviando...",
+      "success": "Mensaje enviado correctamente.",
+      "error": "No se pudo enviar el mensaje. Inténtalo de nuevo.",
+      "validationRequired": "Completa todos los campos obligatorios.",
+      "validationEmail": "Ingresa un correo válido."
     }
   },
   "footer": {
