@@ -1,10 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { NAV_LINKS } from "@/lib/portfolio-data"
 import { getResumeUrl } from "@/lib/resume"
+import { cn } from "@/lib/utils"
 import { usePathname, useRouter, Link } from "@/i18n/navigation"
 import type { AppLocale } from "@/i18n/routing"
 import { useLocale, useTranslations } from "next-intl"
@@ -19,6 +20,7 @@ import {
 
 export function Navbar({ locale: localeProp }: { locale?: string }) {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [activeHash, setActiveHash] = useState("")
   const { theme, setTheme } = useTheme()
   const t = useTranslations()
   const localeFromIntl = useLocale() as AppLocale
@@ -26,6 +28,37 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
   const pathname = usePathname()
   const router = useRouter()
   const resumeUrl = getResumeUrl(locale)
+  const isHome = pathname === `/${locale}` || pathname === "/"
+
+  useEffect(() => {
+    const updateHash = () => {
+      setActiveHash(window.location.hash)
+    }
+
+    updateHash()
+    window.addEventListener("hashchange", updateHash)
+
+    return () => {
+      window.removeEventListener("hashchange", updateHash)
+    }
+  }, [])
+
+  const resolveSectionHref = (href: string) => {
+    if (!href.startsWith("#")) return href
+    return isHome ? href : `/${locale}${href}`
+  }
+
+  const isActive = (href: string) => {
+    if (href.startsWith("#")) {
+      return isHome && activeHash === href
+    }
+
+    if (href === "/journey") {
+      return pathname === `/${locale}/journey` || pathname === "/journey"
+    }
+
+    return false
+  }
 
   const handleLocaleChange = (nextLocale: AppLocale) => {
     if (nextLocale === locale) return
@@ -56,13 +89,31 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
-                href={link.href}
-                className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                href={resolveSectionHref(link.href)}
+                className={cn(
+                  "rounded-lg px-3 py-2 text-sm transition-colors",
+                  isActive(link.href)
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
               >
                 {t(link.labelKey)}
               </a>
             </li>
           ))}
+          <li>
+            <Link
+              href="/journey"
+              className={cn(
+                "rounded-lg px-3 py-2 text-sm transition-colors",
+                isActive("/journey")
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              {t("journey.navLabel")}
+            </Link>
+          </li>
         </ul>
 
         {/* Desktop actions */}
@@ -141,14 +192,33 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
-                  href={link.href}
-                  className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  href={resolveSectionHref(link.href)}
+                  className={cn(
+                    "block rounded-lg px-3 py-2.5 text-sm transition-colors",
+                    isActive(link.href)
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
                   onClick={() => setMobileOpen(false)}
                 >
                   {t(link.labelKey)}
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                href="/journey"
+                className={cn(
+                  "block rounded-lg px-3 py-2.5 text-sm transition-colors",
+                  isActive("/journey")
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
+                onClick={() => setMobileOpen(false)}
+              >
+                {t("journey.navLabel")}
+              </Link>
+            </li>
           </ul>
           <div className="mt-4 flex items-center justify-center gap-2">
             <Button

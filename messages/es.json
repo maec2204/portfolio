@@ -9,6 +9,56 @@
     "switchToEnglish": "Cambiar idioma a inglés",
     "switchToSpanish": "Cambiar idioma a español"
   },
+  "journey": {
+    "navLabel": "Transición",
+    "title": "De sistemas Fullstack a Arquitectura de Agentes de IA",
+    "inProgress": "En progreso",
+    "intro": "Tengo experiencia real en producción entregando sistemas con React, Next.js, TypeScript, GraphQL, fintech, seguros, pagos y banca. Ahora estoy en transición hacia Ingeniería de Sistemas de IA y Arquitectura de Agentes, construyendo proyectos prácticos en RAG, herramientas MCP, orquestación de agentes y evaluación.",
+    "roles": {
+      "title": "Abierto a roles",
+      "frontend": "Frontend Engineer (React / Next.js / TypeScript)",
+      "fullstack": "Fullstack Engineer",
+      "ai": "AI Systems / LLM Engineer (junior-mid según alcance)"
+    },
+    "positioning": {
+      "title": "Posicionamiento actual",
+      "production": "Puedo entregar de inmediato features frontend y fullstack con estándares de producción y fundamentos sólidos de ingeniería.",
+      "transition": "Mi transición hacia IA es activa y real, pero aún está en progreso.",
+      "scope": "Evito exagerar experiencia en IA y priorizo ejecución medible y velocidad de aprendizaje."
+    },
+    "timeline": {
+      "past": {
+        "title": "Pasado: entrega fullstack",
+        "description": "Construí y desplegué sistemas confiables en fintech, seguros, pagos y banca, con arquitectura clara y foco en mantenibilidad."
+      },
+      "present": {
+        "title": "Presente: transición en progreso",
+        "description": "Construyendo proyectos prácticos en pipelines RAG, integración de herramientas MCP, patrones de orquestación de agentes y flujos de evaluación."
+      },
+      "future": {
+        "title": "Futuro: arquitectura de IA",
+        "description": "Apuntando a responsabilidades de Arquitectura de Agentes IA basadas en confiabilidad en producción, observabilidad y evaluación robusta."
+      }
+    },
+    "roadmap": {
+      "now": {
+        "title": "Ahora",
+        "description": "Entrego trabajo frontend y fullstack end-to-end: sistemas UI en React, aplicaciones Next.js, integraciones API, controles de calidad y arquitectura mantenible."
+      },
+      "next": {
+        "title": "Siguiente",
+        "description": "Profundizar trabajo aplicado en sistemas de IA: calidad de recuperación en RAG, herramientas basadas en MCP, bucles de planificación de agentes y suites de evaluación repetibles."
+      },
+      "later": {
+        "title": "Más adelante",
+        "description": "Operar como Arquitecto de Agentes IA diseñando sistemas multiagente confiables que equilibren capacidad, seguridad y costo."
+      }
+    },
+    "cta": {
+      "projects": "Ver proyectos",
+      "contact": "Contacto"
+    }
+  },
   "hero": {
     "openToOpportunities": "Disponible para oportunidades",
     "titlePrefix": "Ingeniero Fullstack evolucionando hacia",

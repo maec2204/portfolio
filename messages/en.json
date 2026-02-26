@@ -9,6 +9,56 @@
     "switchToEnglish": "Switch language to English",
     "switchToSpanish": "Switch language to Spanish"
   },
+  "journey": {
+    "navLabel": "Journey",
+    "title": "From Fullstack Systems to AI Agent Architecture",
+    "inProgress": "In Progress",
+    "intro": "I bring production experience delivering React, Next.js, TypeScript, GraphQL, fintech, insurance, payments, and banking systems. I am now transitioning toward AI Systems Engineering and Agent Architecture through hands-on work in RAG, MCP tooling, agent orchestration, and evaluation.",
+    "roles": {
+      "title": "Open to roles",
+      "frontend": "Frontend Engineer (React / Next.js / TypeScript)",
+      "fullstack": "Fullstack Engineer",
+      "ai": "AI Systems / LLM Engineer (junior-mid depending on scope)"
+    },
+    "positioning": {
+      "title": "Current positioning",
+      "production": "I can immediately deliver production-grade frontend and fullstack features with strong engineering fundamentals.",
+      "transition": "My AI transition is active and real, but still in progress.",
+      "scope": "I avoid exaggerating AI seniority and focus on measurable execution and learning velocity."
+    },
+    "timeline": {
+      "past": {
+        "title": "Past: Fullstack delivery",
+        "description": "Built and shipped reliable systems across fintech, insurance, payments, and banking, with clear architecture and maintainability."
+      },
+      "present": {
+        "title": "Present: Transition in progress",
+        "description": "Building practical projects in RAG pipelines, MCP tool integration, agent orchestration patterns, and evaluation workflows."
+      },
+      "future": {
+        "title": "Future: AI architecture",
+        "description": "Targeting AI Agent Architecture responsibilities grounded in production reliability, observability, and robust evaluation."
+      }
+    },
+    "roadmap": {
+      "now": {
+        "title": "Now",
+        "description": "Deliver frontend and fullstack product work end-to-end: React UI systems, Next.js applications, API integrations, quality gates, and maintainable architecture."
+      },
+      "next": {
+        "title": "Next",
+        "description": "Deepen applied AI systems work through RAG retrieval quality, MCP-based tools, agent planning loops, and repeatable eval suites."
+      },
+      "later": {
+        "title": "Later",
+        "description": "Operate as an AI Agent Architect designing dependable multi-agent systems that balance capability, safety, and cost."
+      }
+    },
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Contact"
+    }
+  },
   "hero": {
     "openToOpportunities": "Open to opportunities",
     "titlePrefix": "Fullstack Engineer evolving into",

@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/portfolio/navbar"
 import { Hero } from "@/components/portfolio/hero"
 import { Highlights } from "@/components/portfolio/highlights"
 import { Projects } from "@/components/portfolio/projects"
@@ -7,29 +6,18 @@ import { Principles } from "@/components/portfolio/principles"
 import { About } from "@/components/portfolio/about"
 import { Writing } from "@/components/portfolio/writing"
 import { Contact } from "@/components/portfolio/contact"
-import { Footer } from "@/components/portfolio/footer"
 
-export default async function HomePage({
-  params,
-}: {
-  params: Promise<{locale: string}>
-}) {
-  const {locale} = await params
-
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar locale={locale} />
-      <main className="flex-1">
-        <Hero />
-        <Highlights />
-        <Projects />
-        <Labs />
-        <Principles />
-        <About />
-        <Writing />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Hero />
+      <Highlights />
+      <Projects />
+      <Labs />
+      <Principles />
+      <About />
+      <Writing />
+      <Contact />
+    </>
   )
 }
