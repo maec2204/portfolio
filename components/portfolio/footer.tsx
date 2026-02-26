@@ -1,8 +1,11 @@
 import { Separator } from "@/components/ui/separator"
 import { NAV_LINKS } from "@/lib/portfolio-data"
 import { Terminal } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function Footer() {
+  const t = useTranslations()
+
   return (
     <footer className="border-t border-border/40">
       <div className="mx-auto max-w-6xl px-6 py-12">
@@ -21,7 +24,7 @@ export function Footer() {
                     href={link.href}
                     className="text-xs text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    {link.label}
+                    {t(link.labelKey)}
                   </a>
                 </li>
               ))}
@@ -31,10 +34,10 @@ export function Footer() {
         <Separator className="my-8" />
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Moisés Escudero. All rights reserved.
+            {t("footer.copyright", {year: new Date().getFullYear()})}
           </p>
           <p className="text-xs text-muted-foreground">
-            Built with Next.js, Tailwind CSS & shadcn/ui
+            {t("footer.builtWith")}
           </p>
         </div>
       </div>

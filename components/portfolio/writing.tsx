@@ -8,9 +8,10 @@ import {
 } from "@/components/ui/card"
 import { POSTS } from "@/lib/portfolio-data"
 import { ArrowRight, PenLine } from "lucide-react"
+import { useLocale, useTranslations } from "next-intl"
 
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString("en-US", {
+function formatDate(dateStr: string, locale: string) {
+  return new Date(dateStr).toLocaleDateString(locale, {
     year: "numeric",
     month: "short",
     day: "numeric",
@@ -18,6 +19,9 @@ function formatDate(dateStr: string) {
 }
 
 export function Writing() {
+  const t = useTranslations()
+  const locale = useLocale()
+
   return (
     <section id="writing" className="scroll-mt-20 py-24">
       <div className="mx-auto max-w-6xl px-6">
@@ -26,16 +30,16 @@ export function Writing() {
             <PenLine className="size-6 text-primary" />
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-foreground">
-                Engineering Notes
+                {t("writing.title")}
               </h2>
               <p className="mt-1 text-muted-foreground">
-                AI, architecture, and production systems.
+                {t("writing.subtitle")}
               </p>
             </div>
           </div>
           <Button variant="ghost" className="hidden gap-2 sm:inline-flex" asChild>
             <a href="#">
-              View all posts
+              {t("writing.viewAllPosts")}
               <ArrowRight className="size-3.5" />
             </a>
           </Button>
@@ -44,20 +48,20 @@ export function Writing() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {POSTS.map((post) => (
             <Card
-              key={post.title}
+              key={post.titleKey}
               className="group cursor-pointer transition-shadow hover:shadow-lg hover:shadow-primary/5"
             >
               <CardHeader>
                 <CardDescription className="text-xs">
-                  {formatDate(post.date)}
+                  {formatDate(post.date, locale)}
                 </CardDescription>
                 <CardTitle className="text-base leading-snug transition-colors group-hover:text-primary">
-                  {post.title}
+                  {t(post.titleKey)}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  {post.excerpt}
+                  {t(post.excerptKey)}
                 </p>
               </CardContent>
             </Card>
@@ -67,7 +71,7 @@ export function Writing() {
         <div className="mt-8 text-center sm:hidden">
           <Button variant="ghost" className="gap-2" asChild>
             <a href="#">
-              View all posts
+              {t("writing.viewAllPosts")}
               <ArrowRight className="size-3.5" />
             </a>
           </Button>

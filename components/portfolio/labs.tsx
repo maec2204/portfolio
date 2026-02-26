@@ -23,6 +23,7 @@ import { LABS } from "@/lib/portfolio-data"
 import type { LabIcon } from "@/lib/portfolio-types"
 import type { LucideIcon } from "lucide-react"
 import { FlaskConical, Play, MessageSquare, Wrench, Brain } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 const LAB_ICONS: Record<LabIcon, LucideIcon> = {
   MessageSquare,
@@ -31,6 +32,8 @@ const LAB_ICONS: Record<LabIcon, LucideIcon> = {
 }
 
 export function Labs() {
+  const t = useTranslations()
+
   return (
     <section
       id="labs"
@@ -41,10 +44,10 @@ export function Labs() {
           <FlaskConical className="size-6 text-primary" />
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-foreground">
-              AI Systems Lab
+              {t("labs.title")}
             </h2>
             <p className="mt-1 text-muted-foreground">
-              Where I am building the next stage of my engineering practice — RAG systems, tool-based agents, MCP integrations, and evaluation harnesses. In progress.
+              {t("labs.subtitle")}
             </p>
           </div>
         </div>
@@ -54,7 +57,7 @@ export function Labs() {
             const Icon = LAB_ICONS[lab.icon]
             return (
               <Card
-                key={lab.name}
+                key={lab.nameKey}
                 className="group flex flex-col transition-shadow hover:shadow-lg hover:shadow-primary/5"
               >
                 <CardHeader>
@@ -63,12 +66,12 @@ export function Labs() {
                       <Icon className="size-5" />
                     </div>
                     <Badge variant="outline" className="text-[11px]">
-                      {lab.type}
+                      {t(`labs.types.${lab.type}`)}
                     </Badge>
                   </div>
-                  <CardTitle className="text-base">{lab.name}</CardTitle>
+                  <CardTitle className="text-base">{t(lab.nameKey)}</CardTitle>
                   <CardDescription className="text-sm leading-relaxed">
-                    {lab.description}
+                    {t(lab.descriptionKey)}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="mt-auto">
@@ -76,7 +79,7 @@ export function Labs() {
                     variant="secondary"
                     className="text-[11px] text-muted-foreground"
                   >
-                    Coming soon
+                    {t("labs.comingSoon")}
                   </Badge>
                 </CardContent>
                 <CardFooter>
@@ -84,14 +87,14 @@ export function Labs() {
                     <DialogTrigger asChild>
                       <Button variant="outline" size="sm" className="gap-2">
                         <Play className="size-3" />
-                        Run Demo
+                        {t("labs.runDemo")}
                       </Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-2xl">
                       <DialogHeader>
-                        <DialogTitle>{lab.name}</DialogTitle>
+                        <DialogTitle>{t(lab.nameKey)}</DialogTitle>
                         <DialogDescription>
-                          {lab.description}
+                          {t(lab.descriptionKey)}
                         </DialogDescription>
                       </DialogHeader>
                       <Separator />
@@ -101,12 +104,12 @@ export function Labs() {
                         </div>
                         <div>
                           <p className="font-medium text-foreground">
-                            Demo placeholder
+                            {t("labs.demoPlaceholderTitle")}
                           </p>
                           <p className="mt-1 text-sm text-muted-foreground">
-                            This space will host an interactive {lab.type}{" "}
-                            demo — chat UI, tool logs, or planning
-                            visualization.
+                            {t("labs.demoPlaceholderDescription", {
+                              type: t(`labs.types.${lab.type}`),
+                            })}
                           </p>
                         </div>
                       </div>

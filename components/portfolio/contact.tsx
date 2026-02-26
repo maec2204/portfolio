@@ -7,6 +7,7 @@ import { SOCIAL_LINKS } from "@/lib/portfolio-data"
 import type { SocialIcon } from "@/lib/portfolio-types"
 import type { LucideIcon } from "lucide-react"
 import { Github, Linkedin, Twitter, Mail } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 const SOCIAL_ICON_MAP: Record<SocialIcon, LucideIcon> = {
   Github,
@@ -16,6 +17,8 @@ const SOCIAL_ICON_MAP: Record<SocialIcon, LucideIcon> = {
 }
 
 export function Contact() {
+  const t = useTranslations()
+
   return (
     <section
       id="contact"
@@ -26,24 +29,22 @@ export function Contact() {
           {/* Left copy */}
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-foreground">
-              Get in touch
+              {t("contact.title")}
             </h2>
             <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">
-              Based in Caracas, Venezuela. Open to remote opportunities across
-              LATAM, the US, and Europe. Interested in working together or have
-              a question? Drop me a message.
+              {t("contact.subtitle")}
             </p>
 
             <div className="mt-10">
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                Find me on
+                {t("contact.findMeOn")}
               </h3>
               <div className="flex flex-wrap gap-3">
                 {SOCIAL_LINKS.map((social) => {
                   const Icon = SOCIAL_ICON_MAP[social.icon]
                   return (
                   <Button
-                    key={social.label}
+                    key={social.labelKey}
                     variant="outline"
                     size="sm"
                     className="gap-2"
@@ -53,10 +54,10 @@ export function Contact() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={social.label}
+                      aria-label={t(social.labelKey)}
                     >
                       <Icon className="size-4" />
-                      {social.label}
+                      {t(social.labelKey)}
                     </a>
                   </Button>
                   )
@@ -69,10 +70,10 @@ export function Contact() {
           <div className="rounded-2xl border border-border/40 bg-card p-6 lg:p-8">
             <div className="mb-6 flex items-center justify-between">
               <h3 className="font-semibold text-foreground">
-                Send a message
+                {t("contact.sendMessage")}
               </h3>
               <Badge variant="secondary" className="text-[11px]">
-                Form wiring coming soon
+                {t("contact.formWiring")}
               </Badge>
             </div>
             <form
@@ -85,11 +86,11 @@ export function Contact() {
                     htmlFor="contact-name"
                     className="mb-1.5 block text-sm font-medium text-foreground"
                   >
-                    Name
+                    {t("contact.form.name")}
                   </label>
                   <Input
                     id="contact-name"
-                    placeholder="Your name"
+                    placeholder={t("contact.form.namePlaceholder")}
                     autoComplete="name"
                   />
                 </div>
@@ -98,12 +99,12 @@ export function Contact() {
                     htmlFor="contact-email"
                     className="mb-1.5 block text-sm font-medium text-foreground"
                   >
-                    Email
+                    {t("contact.form.email")}
                   </label>
                   <Input
                     id="contact-email"
                     type="email"
-                    placeholder="you@example.com"
+                    placeholder={t("contact.form.emailPlaceholder")}
                     autoComplete="email"
                   />
                 </div>
@@ -113,17 +114,17 @@ export function Contact() {
                   htmlFor="contact-message"
                   className="mb-1.5 block text-sm font-medium text-foreground"
                 >
-                  Message
+                  {t("contact.form.message")}
                 </label>
                 <Textarea
                   id="contact-message"
-                  placeholder="Tell me about your project or question..."
+                  placeholder={t("contact.form.messagePlaceholder")}
                   rows={5}
                 />
               </div>
               <Button type="submit" className="w-full gap-2 sm:w-auto">
                 <Mail className="size-4" />
-                Send Message
+                {t("contact.form.submit")}
               </Button>
             </form>
           </div>

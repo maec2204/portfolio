@@ -1,9 +1,12 @@
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { CORE_STRENGTHS, TECH_STACK } from '@/lib/portfolio-data';
+import { useTranslations } from 'next-intl';
 import { User, CheckCircle2 } from 'lucide-react';
 
 export function About() {
+  const t = useTranslations();
+
   return (
     <section
       id='about'
@@ -13,7 +16,7 @@ export function About() {
         <div className='mb-12 flex items-center gap-3'>
           <User className='size-6 text-primary' />
           <h2 className='text-3xl font-bold tracking-tight text-foreground'>
-            About
+            {t('about.title')}
           </h2>
         </div>
 
@@ -21,20 +24,16 @@ export function About() {
           {/* Bio column */}
           <div className='lg:col-span-3'>
             <p className='text-base leading-relaxed text-muted-foreground'>
-              {
-                "I'm Moisés Escudero, a Software Engineer from Caracas, Venezuela, with a degree from Universidad Católica Andrés Bello. Over the past years I've built production systems across fintech, banking, insurance, crowdfunding, parking automation, and payment platforms — primarily with React, Next.js, TypeScript, GraphQL, MongoDB, Java, and Firebase."
-              }
+              {t('about.bio1')}
             </p>
             <p className='mt-4 text-base leading-relaxed text-muted-foreground'>
-              {
-                "I'm now channeling that production engineering background into AI systems. The same principles that keep financial platforms reliable — clear architecture, rigorous testing, observability, and explicit failure handling — apply directly to building trustworthy AI agents, RAG pipelines, and evaluation frameworks. This is not a pivot away from engineering; it's the next layer of it."
-              }
+              {t('about.bio2')}
             </p>
 
             <Separator className='my-8' />
 
             <h3 className='mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground'>
-              Core Strengths
+              {t('about.coreStrengths')}
             </h3>
             <ul className='flex flex-col gap-3' role='list'>
               {CORE_STRENGTHS.map((s) => (
@@ -43,7 +42,7 @@ export function About() {
                   className='flex items-start gap-3 text-sm leading-relaxed text-muted-foreground'
                 >
                   <CheckCircle2 className='mt-0.5 size-4 shrink-0 text-primary' />
-                  <span>{s}</span>
+                  <span>{t(s)}</span>
                 </li>
               ))}
             </ul>
@@ -52,7 +51,7 @@ export function About() {
           {/* Tech stack column */}
           <div className='lg:col-span-2'>
             <h3 className='mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground'>
-              Tech Stack
+              {t('about.techStack')}
             </h3>
             <div className='flex flex-wrap gap-2'>
               {TECH_STACK.map((tech) => (

@@ -4,6 +4,9 @@ import { useState } from "react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { NAV_LINKS } from "@/lib/portfolio-data"
+import { usePathname, useRouter, Link } from "@/i18n/navigation"
+import type { AppLocale } from "@/i18n/routing"
+import { useLocale, useTranslations } from "next-intl"
 import {
   Download,
   Menu,
@@ -16,23 +19,34 @@ import {
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { theme, setTheme } = useTheme()
+  const t = useTranslations()
+  const locale = useLocale() as AppLocale
+  const pathname = usePathname()
+  const router = useRouter()
+
+  const handleLocaleChange = (nextLocale: AppLocale) => {
+    if (nextLocale === locale) return
+
+    const hash = typeof window !== "undefined" ? window.location.hash : ""
+    router.replace(`${pathname}${hash}`, { locale: nextLocale })
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <nav
         className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"
-        aria-label="Main navigation"
+        aria-label={t("navbar.mainNavigationAria")}
       >
         {/* Logo */}
-        <a
-          href="#"
+        <Link
+          href="/"
           className="flex items-center gap-2 text-foreground transition-colors hover:text-primary"
         >
           <Terminal className="size-5" />
           <span className="text-base font-semibold tracking-tight">
-            moises.dev
+            {t("navbar.logo")}
           </span>
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <ul className="hidden items-center gap-1 md:flex" role="list">
@@ -42,7 +56,7 @@ export function Navbar() {
                 href={link.href}
                 className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
-                {link.label}
+                {t(link.labelKey)}
               </a>
             </li>
           ))}
@@ -50,10 +64,32 @@ export function Navbar() {
 
         {/* Desktop actions */}
         <div className="hidden items-center gap-2 md:flex">
+          <div className="flex items-center gap-1 rounded-md border border-border/60 p-1">
+            <Button
+              type="button"
+              variant={locale === "en" ? "secondary" : "ghost"}
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => handleLocaleChange("en")}
+              aria-label={t("navbar.switchToEnglish")}
+            >
+              EN
+            </Button>
+            <Button
+              type="button"
+              variant={locale === "es" ? "secondary" : "ghost"}
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => handleLocaleChange("es")}
+              aria-label={t("navbar.switchToSpanish")}
+            >
+              ES
+            </Button>
+          </div>
           <Button
             variant="ghost"
             size="icon"
-            aria-label="Toggle theme"
+            aria-label={t("navbar.toggleTheme")}
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
             <Sun className="size-4 rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0" />
@@ -62,7 +98,7 @@ export function Navbar() {
           <Button size="sm" asChild>
             <a href="#" className="gap-2">
               <Download className="size-3.5" />
-              Download Resume
+              {t("navbar.downloadResume")}
             </a>
           </Button>
         </div>
@@ -72,7 +108,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            aria-label="Toggle theme"
+            aria-label={t("navbar.toggleTheme")}
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
             <Sun className="size-4 rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0" />
@@ -81,7 +117,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-label={mobileOpen ? t("navbar.closeMenu") : t("navbar.openMenu")}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -100,16 +136,38 @@ export function Navbar() {
                   className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </a>
               </li>
             ))}
           </ul>
+          <div className="mt-4 flex items-center justify-center gap-2">
+            <Button
+              type="button"
+              variant={locale === "en" ? "secondary" : "outline"}
+              size="sm"
+              className="h-8 px-3 text-xs"
+              onClick={() => handleLocaleChange("en")}
+              aria-label={t("navbar.switchToEnglish")}
+            >
+              EN
+            </Button>
+            <Button
+              type="button"
+              variant={locale === "es" ? "secondary" : "outline"}
+              size="sm"
+              className="h-8 px-3 text-xs"
+              onClick={() => handleLocaleChange("es")}
+              aria-label={t("navbar.switchToSpanish")}
+            >
+              ES
+            </Button>
+          </div>
           <div className="mt-4">
             <Button size="sm" className="w-full gap-2" asChild>
               <a href="#">
                 <Download className="size-3.5" />
-                Download Resume
+                {t("navbar.downloadResume")}
               </a>
             </Button>
           </div>

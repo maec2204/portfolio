@@ -1,6 +1,7 @@
 import { PRINCIPLES } from "@/lib/portfolio-data"
 import type { PrincipleIcon } from "@/lib/portfolio-types"
 import type { LucideIcon } from "lucide-react"
+import { useTranslations } from "next-intl"
 import {
   BookOpen,
   Shield,
@@ -28,15 +29,17 @@ const ICON_MAP: Record<PrincipleIcon, LucideIcon> = {
 }
 
 export function Principles() {
+  const t = useTranslations()
+
   return (
     <section className="py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
-            How I build systems
+            {t("principles.title")}
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Principles shaped by years of shipping production software.
+            {t("principles.subtitle")}
           </p>
         </div>
 
@@ -45,7 +48,7 @@ export function Principles() {
             const Icon = ICON_MAP[p.icon]
             return (
               <div
-                key={p.title}
+                key={p.titleKey}
                 className="group flex gap-4 rounded-2xl border border-border/40 bg-card p-6 transition-all hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
               >
                 <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/15">
@@ -53,10 +56,10 @@ export function Principles() {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-foreground">
-                    {p.title}
+                    {t(p.titleKey)}
                   </h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                    {p.description}
+                    {t(p.descriptionKey)}
                   </p>
                 </div>
               </div>

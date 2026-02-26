@@ -1,0 +1,227 @@
+{
+  "navbar": {
+    "mainNavigationAria": "Main navigation",
+    "logo": "moises.dev",
+    "toggleTheme": "Toggle theme",
+    "downloadResume": "Download Resume",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchToEnglish": "Switch language to English",
+    "switchToSpanish": "Switch language to Spanish"
+  },
+  "hero": {
+    "openToOpportunities": "Open to opportunities",
+    "titlePrefix": "Fullstack Engineer evolving into",
+    "titleHighlight": "AI Systems & Agent Architecture",
+    "description": "React / Next.js / TypeScript engineer with production experience across fintech, banking, and payment platforms. Currently focused on AI agents, RAG pipelines, evaluation frameworks, and production reliability.",
+    "viewProjects": "View Projects",
+    "contact": "Contact",
+    "terminal": {
+      "file": "moises.config.ts",
+      "command": "moises.background()"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Production systems I have designed and shipped across fintech, payments, and insurance.",
+    "featured": "Featured Project",
+    "readMore": "Read More",
+    "details": "Details",
+    "liveDemo": "Live Demo",
+    "comingSoon": "Coming soon",
+    "calloutTitle": "Now evolving toward AI systems",
+    "calloutDescription": "The same production engineering principles behind these projects — clear architecture, rigorous testing, and observability — are now being applied to AI agents, RAG pipelines, and evaluation frameworks.",
+    "filters": {
+      "All": "All"
+    },
+    "tags": {
+      "Agents": "Agents",
+      "RAG": "RAG",
+      "MCP": "MCP",
+      "Evals": "Evals",
+      "Cloud": "Cloud",
+      "Fintech": "Fintech",
+      "Fullstack": "Fullstack",
+      "React": "React",
+      "Java": "Java"
+    }
+  },
+  "labs": {
+    "title": "AI Systems Lab",
+    "subtitle": "Where I am building the next stage of my engineering practice — RAG systems, tool-based agents, MCP integrations, and evaluation harnesses. In progress.",
+    "comingSoon": "Coming soon",
+    "runDemo": "Run Demo",
+    "demoPlaceholderTitle": "Demo placeholder",
+    "demoPlaceholderDescription": "This space will host an interactive {type} demo — chat UI, tool logs, or planning visualization.",
+    "types": {
+      "RAG": "RAG",
+      "MCP": "MCP",
+      "Evals": "Evals"
+    }
+  },
+  "principles": {
+    "title": "How I build systems",
+    "subtitle": "Principles shaped by years of shipping production software."
+  },
+  "about": {
+    "title": "About",
+    "bio1": "I'm Moisés Escudero, a Software Engineer from Caracas, Venezuela, with a degree from Universidad Católica Andrés Bello. Over the past years I've built production systems across fintech, banking, insurance, crowdfunding, parking automation, and payment platforms — primarily with React, Next.js, TypeScript, GraphQL, MongoDB, Java, and Firebase.",
+    "bio2": "I'm now channeling that production engineering background into AI systems. The same principles that keep financial platforms reliable — clear architecture, rigorous testing, observability, and explicit failure handling — apply directly to building trustworthy AI agents, RAG pipelines, and evaluation frameworks. This is not a pivot away from engineering; it's the next layer of it.",
+    "coreStrengths": "Core Strengths",
+    "techStack": "Tech Stack"
+  },
+  "writing": {
+    "title": "Engineering Notes",
+    "subtitle": "AI, architecture, and production systems.",
+    "viewAllPosts": "View all posts"
+  },
+  "contact": {
+    "title": "Get in touch",
+    "subtitle": "Based in Caracas, Venezuela. Open to remote opportunities across LATAM, the US, and Europe. Interested in working together or have a question? Drop me a message.",
+    "findMeOn": "Find me on",
+    "sendMessage": "Send a message",
+    "formWiring": "Form wiring coming soon",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project or question...",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "copyright": "© {year} Moisés Escudero. All rights reserved.",
+    "builtWith": "Built with Next.js, Tailwind CSS & shadcn/ui"
+  },
+  "data": {
+    "nav": {
+      "about": "About",
+      "projects": "Projects",
+      "labs": "Labs",
+      "writing": "Writing",
+      "contact": "Contact"
+    },
+    "terminal": {
+      "lines": {
+        "stack": "React / Next.js / TypeScript",
+        "fintech": "Fintech, payments & banking systems",
+        "ai": "Evolving into AI agents, RAG & MCP"
+      }
+    },
+    "strengths": {
+      "problemSolving": "Pragmatic problem solving  delivering production systems in fintech, insurance, and payments.",
+      "communication": "Strong communication  explaining architecture decisions to technical and non-technical stakeholders.",
+      "leadership": "Leadership & teamwork  coordinating cross-functional delivery in distributed teams.",
+      "testing": "Testing & maintainability  CI pipelines, type safety, and automated regression checks.",
+      "learning": "Systematic learner  applying production engineering rigor to AI agents, RAG, and evaluation."
+    },
+    "socials": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "twitter": "X / Twitter",
+      "email": "Email"
+    },
+    "highlights": {
+      "items": {
+        "react": {
+          "label": "React + TypeScript",
+          "description": "Years of production experience in type-safe frontend systems."
+        },
+        "fintech": {
+          "label": "Fintech & Payments",
+          "description": "Banking, crowdfunding, insurance, and payment platforms."
+        },
+        "fullstack": {
+          "label": "Fullstack Delivery",
+          "description": "End-to-end systems with GraphQL, MongoDB, Java, and Firebase."
+        },
+        "ai": {
+          "label": "AI Systems (Next)",
+          "description": "Building toward RAG, agents, MCP, and evaluation frameworks."
+        }
+      }
+    },
+    "projects": {
+      "items": {
+        "crowdfunding": {
+          "name": "Crowdfunding Platform",
+          "description": "Full-featured investment crowdfunding platform with campaign management, investor dashboards, KYC flows, and real-time funding progress. Served thousands of active users in production."
+        },
+        "parking": {
+          "name": "Parking Automation System",
+          "description": "IoT-integrated parking management system handling gate control, license plate recognition, payment processing, and occupancy tracking across multiple locations."
+        },
+        "insurance": {
+          "name": "Insurance Quoting Engine",
+          "description": "Remote engagement with a US-based insurance company. Built a dynamic quoting system with multi-step forms, risk calculations, and real-time premium estimation for end consumers."
+        },
+        "banking": {
+          "name": "Banking & Payroll Systems",
+          "description": "Core banking modules for payroll disbursement, transaction reconciliation, and reporting. Built with Java and integrated with legacy banking infrastructure."
+        },
+        "gateway": {
+          "name": "Payment Gateway & Crypto E-commerce",
+          "description": "Custom payment gateway supporting fiat and cryptocurrency transactions. Integrated checkout flows, webhook-based settlement, and merchant dashboards."
+        }
+      }
+    },
+    "labs": {
+      "items": {
+        "rag": {
+          "name": "RAG Document Search",
+          "description": "A retrieval-augmented generation pipeline with citation extraction. Query a knowledge base and inspect how chunks are ranked and referenced."
+        },
+        "tools": {
+          "name": "Tool Calling Sandbox",
+          "description": "An agent that picks and executes tools through the Model Context Protocol. Inspect payloads, permissions, and return values in real time."
+        },
+        "evals": {
+          "name": "Agent Evaluation Harness",
+          "description": "Run property-based tests and regression suites against agent outputs. Compare prompt versions and track quality metrics over time."
+        }
+      }
+    },
+    "principles": {
+      "items": {
+        "productionFirst": {
+          "title": "Production-first mindset",
+          "description": "Every feature is built for real users from day one. Performance, error handling, and edge cases are part of the first commit, not an afterthought."
+        },
+        "architecture": {
+          "title": "Clear architecture over shortcuts",
+          "description": "Well-defined boundaries between layers, explicit data flows, and readable code matter more than clever abstractions. Systems should be easy to reason about."
+        },
+        "communication": {
+          "title": "Communication as a technical skill",
+          "description": "Documenting decisions, writing clear PRs, and explaining trade-offs to non-technical stakeholders is as important as writing the code itself."
+        },
+        "testing": {
+          "title": "Testing & maintainability",
+          "description": "Automated tests, type safety, and CI pipelines catch regressions before they reach users. Code that cannot be tested confidently cannot be shipped confidently."
+        },
+        "aiEvolution": {
+          "title": "Evolving toward AI-driven systems",
+          "description": "Applying the same rigor from production engineering to AI: grounded outputs, tool safety, evaluation suites, and cost-aware inference."
+        }
+      }
+    },
+    "posts": {
+      "items": {
+        "transition": {
+          "title": "From fintech frontends to AI agents: why the transition makes sense",
+          "excerpt": "Production systems taught me reliability, testing, and architecture. Those same principles apply directly to building trustworthy AI agents."
+        },
+        "evalFirst": {
+          "title": "Evaluation-first development for LLM applications",
+          "excerpt": "Shipping a prompt without an eval suite is like deploying without tests. A practical framework for measuring agent quality."
+        },
+        "mcp": {
+          "title": "What the Model Context Protocol means for tool-based agents",
+          "excerpt": "MCP standardizes how agents discover and call tools. Notes on schema validation, auth scoping, and composability."
+        }
+      }
+    }
+  }
+}

@@ -4,9 +4,11 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { TERMINAL_LINES } from "@/lib/portfolio-data"
 import { ArrowRight, Mail, ChevronRight } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function Hero() {
   const [lineIndex, setLineIndex] = useState(0)
+  const t = useTranslations()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,29 +29,26 @@ export function Hero() {
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary/60" />
               <span className="relative inline-flex size-2 rounded-full bg-primary" />
             </span>
-            Open to opportunities
+            {t("hero.openToOpportunities")}
           </div>
           <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Fullstack Engineer evolving into{" "}
-            <span className="text-primary">AI Systems & Agent Architecture</span>
+            {t("hero.titlePrefix")} {" "}
+            <span className="text-primary">{t("hero.titleHighlight")}</span>
           </h1>
           <p className="mt-6 max-w-lg text-pretty text-base leading-relaxed text-muted-foreground lg:text-lg">
-            React / Next.js / TypeScript engineer with production experience
-            across fintech, banking, and payment platforms. Currently focused on
-            AI agents, RAG pipelines, evaluation frameworks, and production
-            reliability.
+            {t("hero.description")}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button size="lg" asChild>
               <a href="#projects" className="gap-2">
-                View Projects
+                {t("hero.viewProjects")}
                 <ArrowRight className="size-4" />
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="#contact" className="gap-2">
                 <Mail className="size-4" />
-                Contact
+                {t("hero.contact")}
               </a>
             </Button>
           </div>
@@ -64,14 +63,14 @@ export function Hero() {
               <span className="size-3 rounded-full bg-yellow-500/70" />
               <span className="size-3 rounded-full bg-green-500/70" />
               <span className="ml-2 text-xs text-muted-foreground font-mono">
-                moises.config.ts
+                {t("hero.terminal.file")}
               </span>
             </div>
             {/* Terminal body */}
             <div className="px-5 py-6 font-mono text-sm leading-relaxed">
               <div className="text-muted-foreground">
                 <span className="text-primary">{">"}</span>{" "}
-{"moises.background()"}
+                {t("hero.terminal.command")}
               </div>
               <div className="mt-4 flex flex-col gap-3">
                 {TERMINAL_LINES.map((line, i) => (
@@ -90,7 +89,7 @@ export function Hero() {
                           : "text-muted-foreground/40"
                       }`}
                     />
-                    <span>{line}</span>
+                    <span>{t(line)}</span>
                   </div>
                 ))}
               </div>

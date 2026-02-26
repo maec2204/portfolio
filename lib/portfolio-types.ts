@@ -27,10 +27,10 @@ export type ProjectTag =
   | "Java"
 
 export interface Project {
-  /** Display name shown in the card heading. */
-  name: string
-  /** One-to-two sentence summary. */
-  description: string
+  /** i18n key for display name shown in the card heading. */
+  nameKey: string
+  /** i18n key for one-to-two sentence summary. */
+  descriptionKey: string
   /** Categorisation tags for filtering. */
   tags: readonly ProjectTag[]
   /** Promotes the card to a larger featured layout. */
@@ -67,14 +67,14 @@ export type LabType = "RAG" | "MCP" | "Evals"
 export type LabIcon = "MessageSquare" | "Wrench" | "Brain"
 
 export interface Lab {
-  /** Demo title. */
-  name: string
+  /** i18n key for demo title. */
+  nameKey: string
   /** Which capability area this demo covers. */
   type: LabType
   /** Lucide icon key consumed by the Labs component. */
   icon: LabIcon
-  /** Short description shown before the demo is opened. */
-  description: string
+  /** i18n key for short description shown before the demo is opened. */
+  descriptionKey: string
 
   // -- Extensible --
   slug?: string
@@ -102,8 +102,8 @@ export type PrincipleIcon =
   | "TrendingUp"
 
 export interface Principle {
-  title: string
-  description: string
+  titleKey: string
+  descriptionKey: string
   icon: PrincipleIcon
 }
 
@@ -112,9 +112,9 @@ export interface Principle {
 // ---------------------------------------------------------------------------
 
 export interface Post {
-  title: string
-  /** One-line teaser for the list view. */
-  excerpt: string
+  titleKey: string
+  /** i18n key for one-line teaser in list view. */
+  excerptKey: string
   /** ISO-8601 publish date. */
   date: string
 
@@ -133,8 +133,8 @@ export interface Post {
 // ---------------------------------------------------------------------------
 
 export interface Highlight {
-  label: string
-  description: string
+  labelKey: string
+  descriptionKey: string
   icon: HighlightIcon
 }
 
@@ -149,7 +149,7 @@ export type StrengthItem = string
 export type SocialIcon = "Github" | "Linkedin" | "Twitter" | "Mail"
 
 export interface SocialLink {
-  label: string
+  labelKey: string
   href: string
   icon: SocialIcon
 }
@@ -159,7 +159,7 @@ export interface SocialLink {
 // ---------------------------------------------------------------------------
 
 export interface NavLink {
-  label: string
+  labelKey: string
   href: string
 }
 
