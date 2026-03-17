@@ -99,10 +99,23 @@
   "labs": {
     "title": "AI Systems Lab",
     "subtitle": "Where I am building the next stage of my engineering practice — RAG systems, tool-based agents, MCP integrations, and evaluation harnesses. In progress.",
+    "pageTitle": "Labs",
+    "pageSubtitle": "Focused demos showing architecture thinking, constraints, and practical progress.",
     "comingSoon": "Coming soon",
     "runDemo": "Run Demo",
+    "viewDetails": "View details",
+    "viewAllLabs": "View all labs",
+    "backToLabs": "Back to labs",
+    "backToHomeSection": "Back to home labs",
+    "detailNotesTitle": "Implementation notes",
+    "detailNotesDescription": "This lab is intentionally scoped. It documents the problem framing, current constraints, and the next practical iteration.",
     "demoPlaceholderTitle": "Demo placeholder",
     "demoPlaceholderDescription": "This space will host an interactive {type} demo — chat UI, tool logs, or planning visualization.",
+    "maturity": {
+      "concept": "Concept",
+      "prototype": "Prototype",
+      "live": "Live"
+    },
     "types": {
       "RAG": "RAG",
       "MCP": "MCP",

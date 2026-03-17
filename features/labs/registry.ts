@@ -1,0 +1,40 @@
+import type { LabDefinition } from "./types"
+
+export const LAB_REGISTRY: readonly LabDefinition[] = [
+  {
+    slug: "rag-document-search",
+    nameKey: "data.labs.items.rag.name",
+    descriptionKey: "data.labs.items.rag.description",
+    type: "RAG",
+    icon: "MessageSquare",
+    status: "coming-soon",
+    maturity: "prototype",
+    runtime: "client",
+    visibility: "internal-route",
+    href: "/labs/rag-document-search",
+  },
+  {
+    slug: "tool-calling-sandbox",
+    nameKey: "data.labs.items.tools.name",
+    descriptionKey: "data.labs.items.tools.description",
+    type: "MCP",
+    icon: "Wrench",
+    status: "coming-soon",
+    maturity: "concept",
+    runtime: "node",
+    visibility: "internal-route",
+    href: "/labs/tool-calling-sandbox",
+  },
+  {
+    slug: "agent-eval-harness",
+    nameKey: "data.labs.items.evals.name",
+    descriptionKey: "data.labs.items.evals.description",
+    type: "Evals",
+    icon: "Brain",
+    status: "coming-soon",
+    maturity: "concept",
+    runtime: "external",
+    visibility: "internal-route",
+    href: "/labs/agent-eval-harness",
+  },
+]

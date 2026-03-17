@@ -6,14 +6,17 @@ import { Principles } from "@/components/portfolio/principles"
 import { About } from "@/components/portfolio/about"
 import { Writing } from "@/components/portfolio/writing"
 import { Contact } from "@/components/portfolio/contact"
+import { getLabs } from "@/features/labs"
 
-export default function HomePage() {
+export default async function HomePage() {
+  const labs = await getLabs()
+
   return (
     <>
       <Hero />
       <Highlights />
       <Projects />
-      <Labs />
+      <Labs labs={labs} />
       <Principles />
       <About />
       <Writing />

@@ -99,10 +99,23 @@
   "labs": {
     "title": "Laboratorio de Sistemas de IA",
     "subtitle": "Donde estoy construyendo la siguiente etapa de mi práctica de ingeniería — sistemas RAG, agentes con herramientas, integraciones MCP y harnesses de evaluación. En progreso.",
+    "pageTitle": "Labs",
+    "pageSubtitle": "Demos enfocadas para mostrar criterio de arquitectura, restricciones y progreso practico.",
     "comingSoon": "Próximamente",
     "runDemo": "Ejecutar demo",
+    "viewDetails": "Ver detalles",
+    "viewAllLabs": "Ver todos los labs",
+    "backToLabs": "Volver a labs",
+    "backToHomeSection": "Volver a labs en inicio",
+    "detailNotesTitle": "Notas de implementacion",
+    "detailNotesDescription": "Este lab tiene alcance intencionalmente acotado. Documenta el problema, las restricciones actuales y la siguiente iteracion practica.",
     "demoPlaceholderTitle": "Espacio para demo",
     "demoPlaceholderDescription": "Este espacio alojará una demo interactiva de {type}: interfaz de chat, logs de herramientas o visualización de planificación.",
+    "maturity": {
+      "concept": "Concepto",
+      "prototype": "Prototipo",
+      "live": "En vivo"
+    },
     "types": {
       "RAG": "RAG",
       "MCP": "MCP",

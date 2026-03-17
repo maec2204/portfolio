@@ -1,7 +1,6 @@
 import type {
   Project,
   FilterTag,
-  Lab,
   Principle,
   Post,
   Highlight,
@@ -74,37 +73,6 @@ export const FILTER_TAGS: readonly FilterTag[] = [
   "Fullstack",
   "Fintech",
   "Java",
-]
-
-// ---------------------------------------------------------------------------
-// Labs (mini demos)
-// ---------------------------------------------------------------------------
-
-export const LABS: Lab[] = [
-  {
-    nameKey: "data.labs.items.rag.name",
-    slug: "rag-document-search",
-    type: "RAG",
-    icon: "MessageSquare",
-    descriptionKey: "data.labs.items.rag.description",
-    status: "coming-soon",
-  },
-  {
-    nameKey: "data.labs.items.tools.name",
-    slug: "tool-calling-sandbox",
-    type: "MCP",
-    icon: "Wrench",
-    descriptionKey: "data.labs.items.tools.description",
-    status: "coming-soon",
-  },
-  {
-    nameKey: "data.labs.items.evals.name",
-    slug: "agent-eval-harness",
-    type: "Evals",
-    icon: "Brain",
-    descriptionKey: "data.labs.items.evals.description",
-    status: "coming-soon",
-  },
 ]
 
 // ---------------------------------------------------------------------------

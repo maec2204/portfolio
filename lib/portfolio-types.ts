@@ -59,32 +59,6 @@ export interface Project {
 export type FilterTag = "All" | ProjectTag
 
 // ---------------------------------------------------------------------------
-// Labs (mini demos)
-// ---------------------------------------------------------------------------
-
-export type LabType = "RAG" | "MCP" | "Evals"
-
-export type LabIcon = "MessageSquare" | "Wrench" | "Brain"
-
-export interface Lab {
-  /** i18n key for demo title. */
-  nameKey: string
-  /** Which capability area this demo covers. */
-  type: LabType
-  /** Lucide icon key consumed by the Labs component. */
-  icon: LabIcon
-  /** i18n key for short description shown before the demo is opened. */
-  descriptionKey: string
-
-  // -- Extensible --
-  slug?: string
-  /** Route or external URL to the full demo. */
-  href?: string
-  /** Whether the demo is currently live vs. coming-soon. */
-  status?: "live" | "coming-soon"
-}
-
-// ---------------------------------------------------------------------------
 // Engineering Principles
 // ---------------------------------------------------------------------------
 
