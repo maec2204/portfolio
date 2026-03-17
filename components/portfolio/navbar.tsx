@@ -1,16 +1,15 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { NAV_LINKS } from "@/lib/portfolio-data"
 import { getResumeUrl } from "@/lib/resume"
-import { resolveSectionHref } from "@/lib/nav"
+import { resolveSectionHref, useActiveSection } from "@/features/navigation"
 import { cn } from "@/lib/utils"
 import { usePathname, useRouter, Link } from "@/i18n/navigation"
 import type { AppLocale } from "@/i18n/routing"
 import { useLocale, useTranslations } from "next-intl"
-import { useActiveSection } from "@/components/portfolio/hooks/use-active-section"
 import {
   Download,
   Menu,
@@ -42,21 +41,12 @@ export function Navbar({ locale: localeProp }: { locale?: string }) {
     headerOffset: 72,
   })
 
-  useEffect(() => {
-    if (!isHome) {
-      setManualActiveSectionId("")
-      return
-    }
+  const manualSectionId =
+    isHome && manualActiveSectionId !== activeSectionFromScroll
+      ? manualActiveSectionId
+      : ""
 
-    if (
-      manualActiveSectionId &&
-      activeSectionFromScroll === manualActiveSectionId
-    ) {
-      setManualActiveSectionId("")
-    }
-  }, [activeSectionFromScroll, isHome, manualActiveSectionId])
-
-  const activeSectionId = manualActiveSectionId || activeSectionFromScroll
+  const activeSectionId = manualSectionId || activeSectionFromScroll
 
   const isActiveLink = (href: string) => {
     if (href.startsWith("#")) {

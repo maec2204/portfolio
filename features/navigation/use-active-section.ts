@@ -21,10 +21,7 @@ export function useActiveSection({
   )
 
   useEffect(() => {
-    if (!enabled) {
-      setActiveSectionId("")
-      return
-    }
+    if (!enabled) return
 
     const getPositions = () =>
       stableSectionIds
@@ -67,5 +64,5 @@ export function useActiveSection({
     }
   }, [enabled, headerOffset, sectionKey, stableSectionIds])
 
-  return activeSectionId
+  return enabled ? activeSectionId : ""
 }

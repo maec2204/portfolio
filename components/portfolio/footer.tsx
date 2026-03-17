@@ -1,8 +1,8 @@
 "use client"
 
 import { Separator } from "@/components/ui/separator"
+import { resolveSectionHref } from "@/features/navigation"
 import { NAV_LINKS } from "@/lib/portfolio-data"
-import { resolveSectionHref } from "@/lib/nav"
 import { usePathname } from "@/i18n/navigation"
 import { Terminal } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"

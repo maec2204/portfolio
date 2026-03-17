@@ -142,6 +142,7 @@
       "sending": "Enviando...",
       "success": "Mensaje enviado correctamente.",
       "error": "No se pudo enviar el mensaje. Inténtalo de nuevo.",
+      "rateLimited": "Demasiados intentos. Espera un minuto e inténtalo otra vez.",
       "validationRequired": "Completa todos los campos obligatorios.",
       "validationEmail": "Ingresa un correo válido."
     }

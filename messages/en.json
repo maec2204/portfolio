@@ -142,6 +142,7 @@
       "sending": "Sending...",
       "success": "Message sent successfully.",
       "error": "Could not send message. Please try again.",
+      "rateLimited": "Too many attempts. Please wait a minute and try again.",
       "validationRequired": "Please complete all required fields.",
       "validationEmail": "Please enter a valid email address."
     }

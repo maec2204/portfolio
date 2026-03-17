@@ -22,6 +22,7 @@ export function Contact() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+  const [website, setWebsite] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [successMessage, setSuccessMessage] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
@@ -59,13 +60,19 @@ export function Contact() {
           name: trimmedName,
           email: trimmedEmail,
           message: trimmedMessage,
+          website,
         }),
       })
 
       const data = (await response.json()) as { success?: boolean; error?: string }
 
       if (!response.ok || !data.success) {
-        setErrorMessage(data.error || t("contact.form.error"))
+        if (response.status === 429) {
+          setErrorMessage(t("contact.form.rateLimited"))
+          return
+        }
+
+        setErrorMessage(t("contact.form.error"))
         return
       }
 
@@ -142,6 +149,16 @@ export function Contact() {
               onSubmit={handleSubmit}
             >
               <div className="grid gap-4 sm:grid-cols-2">
+                <input
+                  type="text"
+                  name="website"
+                  value={website}
+                  onChange={(event) => setWebsite(event.target.value)}
+                  autoComplete="off"
+                  tabIndex={-1}
+                  className="hidden"
+                  aria-hidden="true"
+                />
                 <div>
                   <label
                     htmlFor="contact-name"

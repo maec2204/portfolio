@@ -1,10 +1,7 @@
 import { Resend } from "resend"
-
-interface ContactPayload {
-  name?: string
-  email?: string
-  message?: string
-}
+import { getServerEnv } from "@/lib/env"
+import { contactPayloadSchema } from "@/lib/validators/contact"
+import { getClientIp, isRateLimited } from "@/lib/rate-limit"
 
 const escapeHtml = (value: string) =>
   value
@@ -16,42 +13,30 @@ const escapeHtml = (value: string) =>
 
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as ContactPayload
-    const name = body.name?.trim() ?? ""
-    const email = body.email?.trim() ?? ""
-    const message = body.message?.trim() ?? ""
-
-    if (!name || !email || !message) {
-      return Response.json({ error: "Missing required fields" }, { status: 400 })
+    const clientIp = getClientIp(request)
+    if (isRateLimited(clientIp)) {
+      return Response.json({ error: "Too many requests" }, { status: 429 })
     }
 
-    if (!email.includes("@")) {
-      return Response.json({ error: "Invalid email" }, { status: 400 })
+    const json = await request.json()
+    const parsed = contactPayloadSchema.safeParse(json)
+    if (!parsed.success) {
+      return Response.json({ error: "Invalid payload" }, { status: 400 })
     }
 
-    const apiKey = process.env.RESEND_API_KEY || process.env.NEXT_PUBLIC_RESEND_API_KEY
-    const contactEmail =
-      process.env.CONTACT_EMAIL || process.env.NEXT_PUBLIC_CONTACT_EMAIL
+    const { name, email, message, website } = parsed.data
 
-    if (!apiKey) {
-      return Response.json(
-        { error: "Missing RESEND_API_KEY environment variable" },
-        { status: 500 }
-      )
+    if (website.trim()) {
+      return Response.json({ success: true })
     }
 
-    if (!contactEmail) {
-      return Response.json(
-        { error: "Missing CONTACT_EMAIL environment variable" },
-        { status: 500 }
-      )
-    }
+    const { RESEND_API_KEY, CONTACT_EMAIL } = getServerEnv()
 
-    const resend = new Resend(apiKey)
+    const resend = new Resend(RESEND_API_KEY)
 
     await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
-      to: contactEmail,
+      to: CONTACT_EMAIL,
       subject: "New Portfolio Contact Message",
       html: `
         <h2>New Portfolio Contact Message</h2>
@@ -63,8 +48,7 @@ export async function POST(request: Request) {
     })
 
     return Response.json({ success: true })
-  } catch (error) {
-    const message = error instanceof Error ? error.message : "Failed to send message"
-    return Response.json({ error: message }, { status: 500 })
+  } catch {
+    return Response.json({ error: "Failed to send message" }, { status: 500 })
   }
 }
