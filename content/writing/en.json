@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "fintech-to-ai-agents",
+    "title": "From fintech frontends to AI agents: why this transition is coherent",
+    "excerpt": "Production work in fintech shaped how I think about reliability, evaluation, and system boundaries. Those same constraints apply to agentic systems.",
+    "date": "2026-02-15",
+    "tags": ["AI Systems", "Architecture", "Career"],
+    "status": "published",
+    "body": "I am not changing disciplines. I am extending the same engineering mindset into a new problem space.\n\nBuilding financial systems taught me explicit failure handling, reproducibility, and clear boundaries between layers. Agentic systems need exactly that.\n\nThe transition becomes credible when you show real constraints, not only demos."
+  },
+  {
+    "slug": "eval-first-llm-dev",
+    "title": "Evaluation-first development for LLM products",
+    "excerpt": "Prompt changes without an evaluation loop are equivalent to deploying without tests. A practical baseline for safer iteration.",
+    "date": "2026-01-28",
+    "tags": ["Evals", "LLM", "Quality"],
+    "status": "published",
+    "body": "An evaluation loop turns subjective output quality into measurable behavior.\n\nAt minimum, define representative scenarios, expected behavior, and clear pass or fail criteria.\n\nWithout this, prompt iteration is mostly guesswork."
+  },
+  {
+    "slug": "mcp-tool-agents",
+    "title": "What MCP changes for tool-enabled agents",
+    "excerpt": "MCP standardizes how agents discover and invoke tools. The practical gain is composability and safer interfaces.",
+    "date": "2026-01-10",
+    "tags": ["MCP", "Tool Calling", "Agents"],
+    "status": "published",
+    "body": "Model Context Protocol reduces custom glue code between models and tools.\n\nThe architecture benefit is consistency in schemas, permissions, and invocation flow.\n\nIt does not remove complexity, but it makes complexity explicit and reusable."
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "crowdfunding-platform",
+    "title": "Crowdfunding platform under production constraints",
+    "summary": "How architecture and delivery practices enabled a reliable investment platform for real users.",
+    "date": "2024-06-01",
+    "status": "published",
+    "body": "This case study focuses on architecture boundaries, data flows, and reliability decisions.\n\nKey trade-offs included release cadence versus operational risk and strict validation versus onboarding friction."
+  },
+  {
+    "slug": "payment-gateway-crypto",
+    "title": "Payment gateway with fiat and crypto settlement",
+    "summary": "Design decisions behind payment orchestration, callbacks, and merchant-facing observability.",
+    "date": "2024-01-01",
+    "status": "published",
+    "body": "This work emphasized robust webhook handling, idempotency, and failure-path visibility.\n\nThe main challenge was balancing integration speed with predictable reconciliation flows."
+  }
+]

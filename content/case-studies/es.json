@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "crowdfunding-platform",
+    "title": "Plataforma de crowdfunding bajo restricciones de produccion",
+    "summary": "Como decisiones de arquitectura y entrega habilitaron una plataforma de inversion confiable para usuarios reales.",
+    "date": "2024-06-01",
+    "status": "published",
+    "body": "Este caso se enfoca en limites de arquitectura, flujos de datos y decisiones de confiabilidad.\n\nLos trade-offs principales incluyeron velocidad de entrega versus riesgo operativo y validacion estricta versus friccion de onboarding."
+  },
+  {
+    "slug": "payment-gateway-crypto",
+    "title": "Pasarela de pagos con liquidacion fiat y crypto",
+    "summary": "Decisiones de diseno para orquestacion de pagos, callbacks y observabilidad para comercios.",
+    "date": "2024-01-01",
+    "status": "published",
+    "body": "Este trabajo priorizo manejo robusto de webhooks, idempotencia y visibilidad de fallos.\n\nEl reto principal fue equilibrar velocidad de integracion con flujos de conciliacion predecibles."
+  }
+]

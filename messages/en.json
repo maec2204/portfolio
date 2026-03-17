@@ -123,7 +123,13 @@
   "writing": {
     "title": "Engineering Notes",
     "subtitle": "AI, architecture, and production systems.",
-    "viewAllPosts": "View all posts"
+    "viewAllPosts": "View all posts",
+    "pageTitle": "Writing",
+    "pageSubtitle": "Technical notes, architecture decisions, and practical lessons."
+  },
+  "caseStudies": {
+    "pageTitle": "Case Studies",
+    "pageSubtitle": "Context, constraints, and architecture decisions from production work."
   },
   "contact": {
     "title": "Get in touch",

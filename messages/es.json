@@ -123,7 +123,13 @@
   "writing": {
     "title": "Notas de ingeniería",
     "subtitle": "IA, arquitectura y sistemas en producción.",
-    "viewAllPosts": "Ver todos los posts"
+    "viewAllPosts": "Ver todos los posts",
+    "pageTitle": "Escritos",
+    "pageSubtitle": "Notas tecnicas, decisiones de arquitectura y aprendizajes practicos."
+  },
+  "caseStudies": {
+    "pageTitle": "Casos de estudio",
+    "pageSubtitle": "Contexto, restricciones y decisiones de arquitectura de trabajo en produccion."
   },
   "contact": {
     "title": "Hablemos",

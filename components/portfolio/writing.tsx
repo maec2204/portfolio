@@ -7,6 +7,7 @@ import {
   CardContent,
 } from "@/components/ui/card"
 import { POSTS } from "@/lib/portfolio-data"
+import { Link } from "@/i18n/navigation"
 import { ArrowRight, PenLine } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 
@@ -38,10 +39,10 @@ export function Writing() {
             </div>
           </div>
           <Button variant="ghost" className="hidden gap-2 sm:inline-flex" asChild>
-            <a href="#">
+            <Link href="/writing">
               {t("writing.viewAllPosts")}
               <ArrowRight className="size-3.5" />
-            </a>
+            </Link>
           </Button>
         </div>
 
@@ -56,7 +57,9 @@ export function Writing() {
                   {formatDate(post.date, locale)}
                 </CardDescription>
                 <CardTitle className="text-base leading-snug transition-colors group-hover:text-primary">
-                  {t(post.titleKey)}
+                  <Link href={`/writing/${post.slug}`} className="outline-none focus-visible:underline">
+                    {t(post.titleKey)}
+                  </Link>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -70,10 +73,10 @@ export function Writing() {
 
         <div className="mt-8 text-center sm:hidden">
           <Button variant="ghost" className="gap-2" asChild>
-            <a href="#">
+            <Link href="/writing">
               {t("writing.viewAllPosts")}
               <ArrowRight className="size-3.5" />
-            </a>
+            </Link>
           </Button>
         </div>
       </div>

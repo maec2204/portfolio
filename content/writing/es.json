@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "fintech-to-ai-agents",
+    "title": "De frontends fintech a agentes de IA: por que esta transicion es coherente",
+    "excerpt": "El trabajo en produccion en fintech me formo en confiabilidad, evaluacion y limites de sistema. Esas mismas restricciones aplican a sistemas agenticos.",
+    "date": "2026-02-15",
+    "tags": ["AI Systems", "Architecture", "Career"],
+    "status": "published",
+    "body": "No estoy cambiando de disciplina. Estoy extendiendo la misma mentalidad de ingenieria a un nuevo espacio de problemas.\n\nConstruir sistemas financieros me enseño manejo explicito de fallos, reproducibilidad y limites claros entre capas. Los sistemas con agentes necesitan exactamente eso.\n\nLa transicion se vuelve creible cuando muestras restricciones reales, no solo demos."
+  },
+  {
+    "slug": "eval-first-llm-dev",
+    "title": "Desarrollo evaluation-first para productos con LLM",
+    "excerpt": "Cambiar prompts sin un ciclo de evaluacion equivale a desplegar sin pruebas. Una base practica para iterar con menos riesgo.",
+    "date": "2026-01-28",
+    "tags": ["Evals", "LLM", "Quality"],
+    "status": "published",
+    "body": "Un ciclo de evaluacion convierte calidad subjetiva en comportamiento medible.\n\nComo minimo, define escenarios representativos, comportamiento esperado y criterios claros de aprobacion.\n\nSin eso, iterar prompts es en gran parte adivinanza."
+  },
+  {
+    "slug": "mcp-tool-agents",
+    "title": "Que cambia MCP para agentes con herramientas",
+    "excerpt": "MCP estandariza como los agentes descubren e invocan herramientas. La ganancia practica es composabilidad e interfaces mas seguras.",
+    "date": "2026-01-10",
+    "tags": ["MCP", "Tool Calling", "Agents"],
+    "status": "published",
+    "body": "Model Context Protocol reduce codigo de integracion personalizado entre modelos y herramientas.\n\nEl beneficio arquitectonico es consistencia en esquemas, permisos y flujo de invocacion.\n\nNo elimina la complejidad, pero la vuelve explicita y reutilizable."
+  }
+]
